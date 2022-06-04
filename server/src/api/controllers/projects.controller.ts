@@ -42,4 +42,13 @@ export default class ProjectsController {
       return errorResponse(res, e.message)
     }
   }
+
+  static async apiFlushProjects(req: Request, res: Response) {
+    try {
+      const result = await ProjectModel.deleteMany({})
+      return successResponse(res, { deleted: result })
+    } catch (e) {
+      return errorResponse(res, e.message)
+    }
+  }
 }

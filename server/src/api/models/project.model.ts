@@ -1,11 +1,11 @@
-import { Schema, SchemaTypes, model } from 'mongoose'
-import 'mongoose-type-url'
+import { Schema, model } from 'mongoose'
 
 const ProjectSchema = new Schema({
-  title: { type: SchemaTypes.String, required: true },
-  frameworks: [SchemaTypes.String],
-  resources: [SchemaTypes.String],  // URLs
-  date: { type: SchemaTypes.Date, default: Date.now }
+  title: { type: String, required: true },
+  thumbnail: String,  // thumbnail URI
+  frameworks: [String],
+  resources: [String],  // URLs
+  date: { type: Date, default: Date.now }
 })
 
 const ProjectModel = model('Project', ProjectSchema)

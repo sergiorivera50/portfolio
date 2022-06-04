@@ -1,6 +1,4 @@
 import { Request, Response } from 'express'
-import { DeleteResult } from 'mongodb'
-import { Query } from 'mongoose'
 import ProjectModel from "../models/project.model"
 import { errorResponse, successResponse } from '../utils/express.util'
 

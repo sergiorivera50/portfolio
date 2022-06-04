@@ -4,13 +4,12 @@ import { errorResponse, successResponse } from '../utils/express.util'
 
 export default class ProjectsController {
   static async apiGetProjects(req: Request, res: Response) {
-    let projects = []
     try {
-      projects = await ProjectModel.find()
+      const projects = await ProjectModel.find()
+      return successResponse(res, { projects: projects })
     } catch (e) {
       return errorResponse(res, "Unable to retrieve projects")
     }
-    return successResponse(res, { projects: projects })
   }
 
   static async apiAddProject(req: Request, res: Response) {
@@ -34,6 +33,7 @@ export default class ProjectsController {
 
   static async apiDeleteProject(req: Request, res: Response) {
     const { id } = req.query
+    
     try {
       const result = await ProjectModel.deleteOne({ _id: id })
       if (result.deletedCount === 0) throw new Error("No documents deleted")

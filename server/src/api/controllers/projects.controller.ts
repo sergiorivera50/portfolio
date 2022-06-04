@@ -1,4 +1,5 @@
 import { Request, Response } from 'express'
+import ProjectsDAO from '../../dao/projects.dao'
 import ProjectModel from "../models/project.model"
 import { errorResponse, successResponse } from '../utils/express.util'
 
@@ -6,7 +7,7 @@ export default class ProjectsController {
   static async apiGetProjects(req: Request, res: Response) {
     let projects = []
     try {
-      projects = await ProjectModel.find()
+      projects = await ProjectsDAO.getProjects()
     } catch (e) {
       return errorResponse(res, "Unable to retrieve projects")
     }
@@ -14,19 +15,19 @@ export default class ProjectsController {
   }
 
   static async apiAddProject(req: Request, res: Response) {
-    const newProject = new ProjectModel({
-      title: req.body.title,
-      frameworks: req.body.frameworks
-    })
-    await newProject.save()
+    let newProject: typeof ProjectModel
+    try {
+      newProject = await ProjectsDAO.addProject(req.body.title, req.body.frameworks)
+    } catch (e) {
+      return errorResponse(res, "Unable to add project")
+    }
     return successResponse(res, { created: newProject })
   }
 
   static async apiDeleteProject(req: Request, res: Response) {
     const id = req.query.id
     try {
-      const result = await ProjectModel.deleteOne({ _id: id })
-      if (result.deletedCount === 0) throw new Error("No documents deleted")
+      ProjectsDAO.deleteProject(id)
     } catch (e) {
       return errorResponse(res, e.message)
     }

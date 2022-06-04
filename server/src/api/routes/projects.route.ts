@@ -3,6 +3,9 @@ import ProjectsController from '../controllers/projects.controller'
 
 const projects = Router()
 
-projects.route('/').get(ProjectsController.apiGetProjects)
+projects.route('/')
+  .get(ProjectsController.apiGetProjects)
+  .post(ProjectsController.apiAddProject)
+  .delete(ProjectsController.apiDeleteProject)
 
 export default projects

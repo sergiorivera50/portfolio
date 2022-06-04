@@ -25,7 +25,7 @@ export default class ProjectsController {
         frameworks: frameworks,
         resources: resources
       }).save()
-      return successResponse(res, { created: createdProject })
+      return successResponse(res, { created: createdProject }, 201)
     } catch (e) {
       return errorResponse(res, "Unable to add project")
     }
@@ -33,7 +33,7 @@ export default class ProjectsController {
 
   static async apiDeleteProject(req: Request, res: Response) {
     const { id } = req.query
-    
+
     try {
       const result = await ProjectModel.deleteOne({ _id: id })
       if (result.deletedCount === 0) throw new Error("No documents deleted")

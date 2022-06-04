@@ -2,6 +2,7 @@ import { Schema, model } from 'mongoose'
 
 const ProjectSchema = new Schema({
   title: { type: String, required: true },
+  description: String,
   thumbnail: String,  // thumbnail URI
   frameworks: [String],
   resources: [String],  // URLs

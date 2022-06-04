@@ -15,6 +15,8 @@ export default class ProjectsController {
   static async apiAddProject(req: Request, res: Response) {
     const {
       title,
+      description,
+      thumbnail,
       frameworks,
       resources
     } = req.body
@@ -22,6 +24,8 @@ export default class ProjectsController {
     try {
       const createdProject = await new ProjectModel({
         title: title,
+        description: description,
+        thumbnail: thumbnail,
         frameworks: frameworks,
         resources: resources
       }).save()

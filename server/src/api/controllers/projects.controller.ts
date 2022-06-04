@@ -17,7 +17,7 @@ export default class ProjectsController {
   static async apiAddProject(req: Request, res: Response) {
     let newProject: typeof ProjectModel
     try {
-      newProject = await ProjectsDAO.addProject(req.body.title, req.body.frameworks)
+      newProject = await ProjectsDAO.addProject(req.body.title, req.body.frameworks, req.body.resources)
     } catch (e) {
       return errorResponse(res, "Unable to add project")
     }
@@ -27,7 +27,7 @@ export default class ProjectsController {
   static async apiDeleteProject(req: Request, res: Response) {
     const id = req.query.id
     try {
-      ProjectsDAO.deleteProject(id)
+      await ProjectsDAO.deleteProject(id)
     } catch (e) {
       return errorResponse(res, e.message)
     }

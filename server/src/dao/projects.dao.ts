@@ -5,10 +5,11 @@ export default class ProjectsDAO {
     return await ProjectModel.find()
   }
 
-  static async addProject(title: String, frameworks: [String]) {
+  static async addProject(title: String, frameworks: [String], resources: [String]) {
     const newProject = new ProjectModel({
       title: title,
-      frameworks: frameworks
+      frameworks: frameworks,
+      resources: resources
     })
     await newProject.save()
     return newProject

@@ -40,7 +40,7 @@ export default class ProjectsController {
 
     try {
       const result = await ProjectModel.deleteOne({ _id: id })
-      if (result.deletedCount === 0) throw new Error("No documents deleted")
+      if (result.deletedCount === 0) return errorResponse(res, "No documents deleted")
       return successResponse(res, { deleted: { id, ...result } })
     } catch (e) {
       return errorResponse(res, e.message)

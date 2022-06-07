@@ -14,23 +14,32 @@ export default class ProjectsController {
 
   static async apiAddProject(req: Request, res: Response) {
     const {
-      title,
-      description,
+      shortTitle,
+      fullTitle,
+      shortDescription,
+      fullDescription,
       thumbnail,
-      frameworks,
+      markdownContent,
+      status,
+      tags,
       resources
     } = req.body
 
     try {
       const createdProject = await new ProjectModel({
-        title: title,
-        description: description,
+        shortTitle: shortTitle,
+        fullTitle: fullTitle,
+        shortDescription: shortDescription,
+        fullDescription: fullDescription,
         thumbnail: thumbnail,
-        frameworks: frameworks,
+        markdownContent: markdownContent,
+        status: status,
+        tags: tags,
         resources: resources
       }).save()
       return successResponse(res, { created: createdProject }, 201)
     } catch (e) {
+      console.log(e)
       return errorResponse(res, "Unable to add project")
     }
   }

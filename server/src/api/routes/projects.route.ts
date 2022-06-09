@@ -7,6 +7,7 @@ projects.route('/')
   .get(ProjectsController.apiGetProjects)
   .post(ProjectsController.apiAddProject)
   .delete(ProjectsController.apiDeleteProject)
+
 projects.route('/flush')
   .delete(ProjectsController.apiFlushProjects)
 

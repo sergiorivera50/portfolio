@@ -1,12 +1,14 @@
-import MenuNavbar from './components/NavBar/MenuNavbar'
+import MenuNavbar from './components/MenuNavbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
+import './css/global.css'
+import MainHeader from './components/MainHeader';
 
 function App() {
   return (
-    <div>
+    <>
       <MenuNavbar />
-    </div>
+      <MainHeader />
+    </>
   );
 }
 

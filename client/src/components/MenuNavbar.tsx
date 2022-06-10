@@ -4,7 +4,7 @@ import { Navbar, Container, Nav } from "react-bootstrap"
 class MenuNavbar extends React.Component {
   render() {
     return (
-      <Navbar sticky="top">
+      <Navbar sticky="top" style={{ minHeight: "10vh" }}>
         <Container>
           <Navbar.Collapse>
             <Nav className="ms-auto">

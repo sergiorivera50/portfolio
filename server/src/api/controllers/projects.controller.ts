@@ -1,14 +1,14 @@
 import { Request, Response } from 'express'
 import ProjectModel from "../models/project.model"
-import { errorResponse, successResponse } from '../utils/express.util'
+import ExpressUtils from '../utils/express.util'
 
 export default class ProjectsController {
   static async apiGetProjects(req: Request, res: Response) {
     try {
       const projects = await ProjectModel.find()
-      return successResponse(res, { projects: projects })
+      return ExpressUtils.successResponse(res, { projects: projects })
     } catch (e) {
-      return errorResponse(res, "Unable to retrieve projects")
+      return ExpressUtils.errorResponse(res, "Unable to retrieve projects")
     }
   }
 
@@ -37,10 +37,10 @@ export default class ProjectsController {
         tags: tags,
         resources: resources
       }).save()
-      return successResponse(res, { created: createdProject }, 201)
+      return ExpressUtils.successResponse(res, { created: createdProject }, 201)
     } catch (e) {
       console.log(e)
-      return errorResponse(res, "Unable to add project")
+      return ExpressUtils.errorResponse(res, "Unable to add project")
     }
   }
 
@@ -49,19 +49,19 @@ export default class ProjectsController {
 
     try {
       const result = await ProjectModel.deleteOne({ _id: id })
-      if (result.deletedCount === 0) return errorResponse(res, "No documents deleted")
-      return successResponse(res, { deleted: { id, ...result } })
+      if (result.deletedCount === 0) return ExpressUtils.errorResponse(res, "No documents deleted")
+      return ExpressUtils.successResponse(res, { deleted: { id, ...result } })
     } catch (e) {
-      return errorResponse(res, e.message)
+      return ExpressUtils.errorResponse(res, e.message)
     }
   }
 
   static async apiFlushProjects(req: Request, res: Response) {
     try {
       const result = await ProjectModel.deleteMany({})
-      return successResponse(res, { deleted: result })
+      return ExpressUtils.successResponse(res, { deleted: result })
     } catch (e) {
-      return errorResponse(res, e.message)
+      return ExpressUtils.errorResponse(res, e.message)
     }
   }
 }

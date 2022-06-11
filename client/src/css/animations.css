@@ -1,0 +1,111 @@
+:root {
+  --default-duration: 1s;
+}
+
+/* Utils */
+
+.delay2s {
+  animation-delay: 2s !important;
+  -moz-animation-delay: 2s !important;
+  -webkit-animation-delay: 2s !important;
+  -o-animation-delay: 2s !important;
+}
+
+.delay4s {
+  animation-delay: 4s !important;
+  -moz-animation-delay: 4s !important;
+  -webkit-animation-delay: 4s !important;
+  -o-animation-delay: 4s !important;
+}
+
+.delay6s {
+  animation-delay: 6s !important;
+  -moz-animation-delay: 6s !important;
+  -webkit-animation-delay: 6s !important;
+  -o-animation-delay: 6s !important;
+}
+
+.duration2s {
+  animation-duration: 2s !important;
+  -moz-animation-duration: 2s !important;
+  -webkit-animation-duration: 2s !important;
+  -o-animation-duration: 2s !important;
+}
+
+.duration3s {
+  animation-duration: 3s !important;
+  -moz-animation-duration: 3s !important;
+  -webkit-animation-duration: 3s !important;
+  -o-animation-duration: 3s !important;
+}
+
+.duration4s {
+  animation-duration: 4s !important;
+  -moz-animation-duration: 4s !important;
+  -webkit-animation-duration: 4s !important;
+  -o-animation-duration: 4s !important;
+}
+
+/* Fade-in animation */
+
+.fadein {
+  margin-top: 25px;
+  font-size: 21px;
+  text-align: center;
+  opacity: 0;
+
+  /* Generic */
+  animation-name: fadein;
+  animation-duration: var(--default-duration);
+  animation-fill-mode: forwards;
+  /* Firefox */
+  -moz-animation-name: fadein;
+  -moz-animation-duration: var(--default-duration);
+  /* Safari and Chrome */
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: var(--default-duration);
+  -webkit-animation-fill-mode: forwards;
+  /* Opera */
+  -o-animation-name: fadein;
+  -o-animation-duration: var(--default-duration);
+}
+
+@keyframes fadein {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@-moz-keyframes fadein { /* Firefox */
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from { opacity:0 }
+  to { opacity: 1 }
+}
+
+@-o-keyframes fadein { /* Opera */
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+/* Wave animation */
+
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}

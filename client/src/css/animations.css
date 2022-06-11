@@ -70,9 +70,6 @@
 /* Fade-in animation */
 
 .fadeinAnimation {
-  margin-top: 25px;
-  font-size: 21px;
-  text-align: center;
   opacity: 0;
 
   /* Generic */

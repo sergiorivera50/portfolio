@@ -7,7 +7,10 @@ import Preloader from "./Preloader"
 class LoadingScreen extends React.Component {
   render() {
     return (
-      <Container fluid className="d-flex align-items-center justify-content-center text-center" style={{ minHeight: "100vh" }}>
+      <Container fluid 
+        className="d-flex align-items-center justify-content-center text-center" 
+        style={{ minHeight: "100vh" }}
+      >
         <Col>
           <Row className="justify-content-center">
             <p className="fadeinAnimation duration2s" style={{ fontWeight: "bold", fontSize: "2em" }}>
@@ -19,7 +22,7 @@ class LoadingScreen extends React.Component {
               Sergio Rivera
             </h1>
           </Row>
-          <Row className="justify-content-center">
+          <Row className="justify-content-center" style={{ marginBottom: "35px" }}>
             <p className="fadeinAnimation delay2s" style={{ fontWeight: "bold", fontSize: "2em", marginTop: "30px" }}>
               Welcome to my Project Tracker
             </p>

@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar, Container, Nav, Row, Col } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import "../css/debug.css"
 
 class MenuNavbar extends React.Component {

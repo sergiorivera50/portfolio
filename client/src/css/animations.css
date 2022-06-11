@@ -4,11 +4,25 @@
 
 /* Utils */
 
+.delay1s {
+  animation-delay: 1s !important;
+  -moz-animation-delay: 1s !important;
+  -webkit-animation-delay: 1s !important;
+  -o-animation-delay: 1s !important;
+} 
+
 .delay2s {
   animation-delay: 2s !important;
   -moz-animation-delay: 2s !important;
   -webkit-animation-delay: 2s !important;
   -o-animation-delay: 2s !important;
+}
+
+.delay3s {
+  animation-delay: 4s !important;
+  -moz-animation-delay: 4s !important;
+  -webkit-animation-delay: 4s !important;
+  -o-animation-delay: 4s !important;
 }
 
 .delay4s {
@@ -48,58 +62,58 @@
 
 /* Fade-in animation */
 
-.fadein {
+.fadeinAnimation {
   margin-top: 25px;
   font-size: 21px;
   text-align: center;
   opacity: 0;
 
   /* Generic */
-  animation-name: fadein;
+  animation-name: fadeinAnimation;
   animation-duration: var(--default-duration);
   animation-fill-mode: forwards;
   /* Firefox */
-  -moz-animation-name: fadein;
+  -moz-animation-name: fadeinAnimation;
   -moz-animation-duration: var(--default-duration);
   /* Safari and Chrome */
-  -webkit-animation-name: fadein;
+  -webkit-animation-name: fadeinAnimation;
   -webkit-animation-duration: var(--default-duration);
   -webkit-animation-fill-mode: forwards;
   /* Opera */
-  -o-animation-name: fadein;
+  -o-animation-name: fadeinAnimation;
   -o-animation-duration: var(--default-duration);
 }
 
-@keyframes fadein {
+@keyframes fadeinAnimation {
   from { opacity: 0 }
   to { opacity: 1 }
 }
 
-@-moz-keyframes fadein { /* Firefox */
+@-moz-keyframes fadeinAnimation { /* Firefox */
   from { opacity: 0 }
   to { opacity: 1 }
 }
 
-@-webkit-keyframes fadein { /* Safari and Chrome */
+@-webkit-keyframes fadeinAnimation { /* Safari and Chrome */
   from { opacity:0 }
   to { opacity: 1 }
 }
 
-@-o-keyframes fadein { /* Opera */
+@-o-keyframes fadeinAnimation { /* Opera */
   from { opacity: 0 }
   to { opacity: 1 }
 }
 
 /* Wave animation */
 
-.wave {
-  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+.waveAnimation {
+  animation-name: waveAnimation;  /* Refers to the name of your @keyframes element below */
   animation-duration: 2.5s;        /* Change to speed up or slow down */
   transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
   display: inline-block;
 }
 
-@keyframes wave-animation {
+@keyframes waveAnimation {
     0% { transform: rotate( 0.0deg) }
    10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
    20% { transform: rotate(-8.0deg) }

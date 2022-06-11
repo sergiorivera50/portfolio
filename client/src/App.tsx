@@ -1,13 +1,11 @@
-import MenuNavbar from './components/MenuNavbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/global.css'
-import MainHeader from './components/MainHeader';
+import LoadingScreen from './components/LoadingScreen';
 
 function App() {
   return (
     <>
-      <MenuNavbar />
-      <MainHeader />
+      <LoadingScreen />
     </>
   );
 }

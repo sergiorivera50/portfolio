@@ -5,7 +5,7 @@ import LoadingScreen from './components/LoadingScreen';
 import Dashboard from "./components/Dashboard";
 
 function App() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false) // useState(true)
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 7000)

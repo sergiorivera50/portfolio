@@ -1,11 +1,13 @@
 import React from "react"
+import { Col, Container, Row } from "react-bootstrap"
+import MenuNavbar from "./MenuNavbar"
 
 class Dashboard extends React.Component {
   render() {
     return (
-      <>
-        <p>Project Dashboard</p>
-      </>
+      <Container fluid style={{borderBottom: "1px solid black"}}>
+        <MenuNavbar />
+      </Container>
     )
   }
 }

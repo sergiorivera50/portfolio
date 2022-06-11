@@ -136,14 +136,14 @@
 }
 
 .dot {
-  margin-left: 3px;
+  margin-right: 4px;
 }
 
 .preloader-dots .dot {
   display: inline-block;
   background: black;
-  height: 8px;
-  width: 8px;
+  height: 6px;
+  width: 6px;
   opacity: 0.0;
   border-radius: 50%;
   animation: dotAnimation 1.8s infinite;

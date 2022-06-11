@@ -15,10 +15,10 @@ class MainHeader extends React.Component {
             <p className="fadeinAnimation duration2s" style={{ fontWeight: "bold", fontSize: "2em" }}>
               Hi <span className="waveAnimation">👋</span> I am
             </p>
-            <h1 className="fadeinAnimation duration2s delay1s" style={{ fontWeight: "bold", fontSize: "5em" }}>
+            <h1 className="fadeinAnimation duration2s delay0p5s" style={{ fontWeight: "bold", fontSize: "5em" }}>
               Sergio Rivera
             </h1>
-            <p className="fadeinAnimation delay2s" style={{ fontWeight: "bold", fontSize: "2em", marginTop: "30px" }}>
+            <p className="fadeinAnimation delay3s" style={{ fontWeight: "bold", fontSize: "2em", marginTop: "30px" }}>
               Welcome to my Project Tracker
             </p>
           </div>

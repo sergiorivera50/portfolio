@@ -4,12 +4,19 @@
 
 /* Utils */
 
+.delay0p5s {
+  animation-delay: 0.5s !important;
+  -moz-animation-delay: 0.5s !important;
+  -webkit-animation-delay: 0.5s !important;
+  -o-animation-delay: 0.5s !important;
+}
+
 .delay1s {
   animation-delay: 1s !important;
   -moz-animation-delay: 1s !important;
   -webkit-animation-delay: 1s !important;
   -o-animation-delay: 1s !important;
-} 
+}
 
 .delay2s {
   animation-delay: 2s !important;
@@ -19,10 +26,10 @@
 }
 
 .delay3s {
-  animation-delay: 4s !important;
-  -moz-animation-delay: 4s !important;
-  -webkit-animation-delay: 4s !important;
-  -o-animation-delay: 4s !important;
+  animation-delay: 3s !important;
+  -moz-animation-delay: 3s !important;
+  -webkit-animation-delay: 3s !important;
+  -o-animation-delay: 3s !important;
 }
 
 .delay4s {

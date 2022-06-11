@@ -1,25 +1,31 @@
 import React from "react"
-import { Navbar, Container, Nav } from "react-bootstrap"
+import { Navbar, Container, Nav, Row, Col } from "react-bootstrap"
+import "../css/debug.css"
 
 class MenuNavbar extends React.Component {
   render() {
     return (
       <Container fluid 
-        className="d-flex align-items-center" 
-        style={{minHeight: "10vh", borderBottom: "1px solid black"}}
+        className="align-items-center flex-nowrap" 
+        style={{borderBottom: "1px solid black"}}
       >
-        <Navbar sticky="top" >
-          <Container>
-            <Navbar.Collapse>
-              <Nav className="ms-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#about">About</Nav.Link>
-                <Nav.Link href="#projects">Projects</Nav.Link>
-                <Nav.Link href="#contact">Contact</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+        <Row 
+          className="align-items-center"
+          style={{minHeight: "5vh"}}
+        >
+          <Col style={{ borderRight: "1px solid black" }}>
+            <h1 className="sergiorivera">Sergio Rivera</h1>
+          </Col>
+          <Col 
+            className="col-6" 
+            style={{ borderRight: "1px solid black" }}
+          >
+            2 of 3
+          </Col>
+          <Col>
+            3 of 3
+          </Col>
+        </Row>
       </Container>
     )
   }

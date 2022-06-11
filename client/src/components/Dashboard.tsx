@@ -8,8 +8,8 @@ class Dashboard extends React.Component {
     return (
       <>
         <MenuNavbar />
-        <Container fluid className="" style={{ minHeight: "90vh" }}> {/* TODO: DashboardContent component */}
-          <p>Hi</p>
+        <Container fluid className="d-flex justify-content-center align-items-center" style={{ minHeight: "90vh" }}> {/* TODO: DashboardContent component */}
+          <p>Project Dashboard Content</p>
         </Container>
       </>
     )

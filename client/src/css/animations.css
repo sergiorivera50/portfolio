@@ -144,7 +144,7 @@
   background: black;
   height: 8px;
   width: 8px;
-  opacity: 0.3;
+  opacity: 0.0;
   border-radius: 50%;
   animation: dotAnimation 1.8s infinite;
 }
@@ -168,20 +168,22 @@
 @keyframes dotAnimation {
   0% {
     transform: translateY(0px);
+    opacity: 0.0;
   }
   35% {
     transform: translateY(0px);
-    opacity: 0.3;
+    opacity: 0.0;
   }
   50% {
-    transform: translateY(-20px);
-    opacity: 0.8;
+    transform: translateY(-10px);
+    opacity: 0.5;
   }
   70% {
     transform: translateY(3px);
-    opacity: 0.8;
+    opacity: 1.0;
   }
   85% {
     transform: translateY(-3px);
+    opacity: 1.0;
   }
 }

@@ -13,17 +13,17 @@ class LoadingScreen extends React.Component {
       >
         <Col>
           <Row className="justify-content-center">
-            <p className="fadeinAnimation duration2s" style={{ fontWeight: "bold", fontSize: "2em" }}>
+            <p className="fadeinAnimation duration2s" style={{ fontSize: "2em" }}>
               Hi <span className="waveAnimation">👋</span> I am
             </p>
           </Row>
           <Row className="justify-content-center">
-            <h1 className="fadeinAnimation duration2s delay0p5s" style={{ fontWeight: "bold", fontSize: "5em" }}>
+            <h1 className="sergiorivera fadeinAnimation duration2s delay0p5s" style={{ fontSize: "5em" }}>
               Sergio Rivera
             </h1>
           </Row>
           <Row className="justify-content-center" style={{ marginBottom: "35px" }}>
-            <p className="fadeinAnimation delay2s" style={{ fontWeight: "bold", fontSize: "2em", marginTop: "30px" }}>
+            <p className="fadeinAnimation delay2s" style={{ fontSize: "2em", marginTop: "30px" }}>
               Welcome to my Project Tracker
             </p>
           </Row>

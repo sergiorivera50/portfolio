@@ -7,6 +7,6 @@ const app: Application = express()
 app.use(middlewares)
 app.use('/api/v1', routes)
 
-app.use('*', (req, res) => res.status(404).json({ error: 'not found' }))
+app.use('*', (req, res) => res.status(404).json({ error: `${req.method} ${req.path} not found` }))
 
 export default app

@@ -17,6 +17,7 @@ const ProjectSchema = new Schema({
   status:           { type: String, required: true     },  // current status of the project
   tags:             { type: [String]                   },  // technologies, frameworks, techniques, ...
   resources:        { type: [Resource]                 },  // urls pointing to external resources
+  featured:         { type: Boolean, default: false    },  // top 4 projects
 })
 
 const ProjectModel = model('Project', ProjectSchema)

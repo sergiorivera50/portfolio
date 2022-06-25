@@ -33,7 +33,8 @@ export default class ProjectsController {
       markdownContent,
       status,
       tags,
-      resources
+      resources,
+      featured
     } = req.body
 
     try {
@@ -46,12 +47,49 @@ export default class ProjectsController {
         markdownContent: markdownContent,
         status: status,
         tags: tags,
-        resources: resources
+        resources: resources,
+        featured: featured
       }).save()
       return ExpressUtils.successResponse(res, { created: createdProject }, 201)
     } catch (e) {
       console.log(e)
       return ExpressUtils.errorResponse(res, "Unable to add project")
+    }
+  }
+
+  static async apiUpdateProject(req: Request, res: Response) {
+    const id = req.params.id
+    const {
+      shortTitle,
+      fullTitle,
+      shortDescription,
+      fullDescription,
+      thumbnail,
+      markdownContent,
+      status,
+      tags,
+      resources,
+      featured
+    } = req.body
+
+    try {
+      const newVersion = {
+        shortTitle: shortTitle,
+        fullTitle: fullTitle,
+        shortDescription: shortDescription,
+        fullDescription: fullDescription,
+        thumbnail: thumbnail,
+        markdownContent: markdownContent,
+        status: status,
+        tags: tags,
+        resources: resources,
+        featured: featured
+      }
+      const updatedProject = await ProjectModel.findByIdAndUpdate(id, newVersion, {returnDocument: 'after'})
+      return ExpressUtils.successResponse(res, { updated: updatedProject })
+    } catch (e) {
+      console.log(e)
+      return ExpressUtils.errorResponse(res, `Unable to udpate project with id ${id}`)
     }
   }
 

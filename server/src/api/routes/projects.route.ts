@@ -9,6 +9,7 @@ projects.route('/')
   .delete(ProjectsController.apiDeleteProject)
 
 projects.route('/:id')
+  .put(ProjectsController.apiUpdateProject)
   .get(ProjectsController.apiGetProjectById)
 
 projects.route('/flush')

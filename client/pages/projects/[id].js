@@ -1,15 +1,20 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react'
-import { useRouter } from 'next/router'
+import api from '../../services/project'
 
-const Project = () => {
-  const router = useRouter()
-  const { id } = router.query
+export async function getServerSideProps({ params }) {
+  const { data } = await api.getProjectById(params.id)
+  const { project } = data
 
+  return {
+    props: { project }
+  }
+}
+
+const Project = ({ project }) => {
   return (
     <div className='w-full h-screen text-center'>
       <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
-        project: {id}
+        {project.shortTitle}
       </div>
     </div>
   )

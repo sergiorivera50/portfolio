@@ -12,6 +12,17 @@ export default class ProjectsController {
     }
   }
 
+  static async apiGetProjectById(req: Request, res: Response) {
+    const id = req.params.id
+
+    try {
+      const project = await ProjectModel.findById(id)
+      return ExpressUtils.successResponse(res, { project: project })
+    } catch (e) {
+      return ExpressUtils.errorResponse(res, `Unable to retrieve project with id ${id}`)
+    }
+  }
+
   static async apiAddProject(req: Request, res: Response) {
     const {
       shortTitle,

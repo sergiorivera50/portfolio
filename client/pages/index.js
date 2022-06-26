@@ -3,8 +3,18 @@ import Image from 'next/image'
 import About from '../components/About'
 import Main from '../components/Main'
 import Projects from '../components/Projects'
+import api from '../services/project'
 
-export default function Home() {
+export async function getServerSideProps() {
+  const { data } = await api.getFeaturedProjects(4)
+  const { projects } = data
+
+  return {
+    props: { featuredProjects: projects }
+  }
+}
+
+export default function Home({ featuredProjects }) {
   return (
     <div>
       <Head>
@@ -14,7 +24,7 @@ export default function Home() {
       </Head>
       <Main />
       <About />
-      <Projects />
+      <Projects projects={ featuredProjects } />
     </div>
   )
 }

@@ -33,6 +33,22 @@ html {
   button {
     @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white
   }
+
+  a {
+    @apply underline
+  }
+
+  .markdown li {
+    @apply cursor-default
+  }
+
+  .markdown ul {
+    @apply list-disc
+  }
+
+  .markdown h1, h2, h3, h4, h5, h6 {
+    @apply mb-4 mt-6
+  }
 }
 
 .rainbow-text:hover {

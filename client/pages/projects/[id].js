@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import bgImg from '../../public/assets/projects/project.png'
 import { RiRadioButtonFill } from 'react-icons/ri'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 export async function getServerSideProps({ params }) {
   const { data } = await api.getProjectById(params.id)
@@ -28,16 +30,8 @@ const Project = ({ project }) => {
 
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8'>
         <div className='col-span-4'>
-          <p>Project</p>
-          <h2>Overview</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Nulla corrupti, maiores fugit veniam sit incidunt natus temporibus.
-            Qui, velit? Officia vitae repellendus doloremque provident deserunt dolor totam atque magnam itaque?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Nulla corrupti, maiores fugit veniam sit incidunt natus temporibus.
-            Qui, velit? Officia vitae repellendus doloremque provident deserunt.
-          </p>
+          <p className='text-gray-500'>Last updated 26th June 2022</p>
+          <ReactMarkdown className='markdown' children={project.markdown} remarkPlugins={[remarkGfm]}/>
           <button className='px-8 py-2 mt-4 mr-8'>Demo</button>
           <button className='px-8 py-2 mt-4'>Code</button>
         </div>

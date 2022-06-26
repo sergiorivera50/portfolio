@@ -25,32 +25,25 @@ export default class ProjectsController {
   }
 
   static async apiAddProject(req: Request, res: Response) {
+    const metadataFile =  req.files.metadata as fileUpload.UploadedFile
     const {
-      shortTitle,
-      fullTitle,
-      shortDescription,
-      fullDescription,
+      title,
+      description,
       thumbnail,
-      status,
-      tags,
-      resources,
+      technologies,
       featured
-    } = req.body
+    } = JSON.parse(metadataFile.data.toString())
 
-    const { data } = req.files.markdown as fileUpload.UploadedFile
-    const decoded = new TextDecoder('utf-8').decode(data)
+    const markdownFile = req.files.markdown as fileUpload.UploadedFile
+    const markdown = new TextDecoder('utf-8').decode(markdownFile.data)
 
     try {
       const createdProject = await new ProjectModel({
-        shortTitle: shortTitle,
-        fullTitle: fullTitle,
-        shortDescription: shortDescription,
-        fullDescription: fullDescription,
+        title: title,
+        description: description,
         thumbnail: thumbnail,
-        markdown: decoded,
-        status: status,
-        tags: tags,
-        resources: resources,
+        markdown: markdown,
+        technologies: technologies,
         featured: featured
       }).save()
       return ExpressUtils.successResponse(res, { created: createdProject }, 201)
@@ -62,30 +55,26 @@ export default class ProjectsController {
 
   static async apiUpdateProject(req: Request, res: Response) {
     const id = req.params.id
+
+    const metadataFile =  req.files.metadata as fileUpload.UploadedFile
     const {
-      shortTitle,
-      fullTitle,
-      shortDescription,
-      fullDescription,
+      title,
+      description,
       thumbnail,
-      markdownContent,
-      status,
-      tags,
-      resources,
+      technologies,
       featured
-    } = req.body
+    } = JSON.parse(metadataFile.data.toString())
+
+    const markdownFile = req.files.markdown as fileUpload.UploadedFile
+    const markdown = new TextDecoder('utf-8').decode(markdownFile.data)
 
     try {
       const newVersion = {
-        shortTitle: shortTitle,
-        fullTitle: fullTitle,
-        shortDescription: shortDescription,
-        fullDescription: fullDescription,
+        title: title,
+        description: description,
         thumbnail: thumbnail,
-        markdownContent: markdownContent,
-        status: status,
-        tags: tags,
-        resources: resources,
+        markdown: markdown,
+        technologies: technologies,
         featured: featured
       }
       const updatedProject = await ProjectModel.findByIdAndUpdate(id, newVersion, {returnDocument: 'after'})
@@ -118,7 +107,7 @@ export default class ProjectsController {
   }
 
   static async apiGetFeaturedProjects(req: Request, res: Response) {
-    const { items } = req.params
+    const { items } = req.query
     try {
       const featured = await ProjectModel.find({ featured: true }).limit(Number(items))
       return ExpressUtils.successResponse(res, { projects: featured })

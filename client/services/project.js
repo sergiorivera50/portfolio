@@ -6,10 +6,10 @@ export default class {
   }
 
   static async getProjectById(id) {
-    return http.get(`/projects/${id}`)
+    return http.get(`/projects/id/${id}`)
   }
 
   static async getFeaturedProjects(items = 4) {
-    return http.get(`/projects/featured/${items}`)
+    return http.get(`/projects/featured?items=${items}`)
   }
 }

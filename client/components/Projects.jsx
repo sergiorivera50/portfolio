@@ -13,8 +13,8 @@ const Projects = ({ projects }) => {
             projects.map((project, ix) => (
               <ProjectItem 
                 key={ix}
-                title={project.shortTitle} 
-                description={project.shortDescription} 
+                title={project.title} 
+                description={project.description} 
                 bgImg={githubCloneImg} 
                 projectPath={`/projects/${project._id}`} 
               />

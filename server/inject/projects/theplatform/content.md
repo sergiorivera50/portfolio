@@ -1,4 +1,4 @@
-## Overview
+## The Platform Publishing
 
 `react-markdown` is a markdown component for React.
 

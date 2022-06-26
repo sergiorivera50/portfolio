@@ -1,4 +1,4 @@
-## Overview
+## 13-month internship at IBM
 
 `react-markdown` is a markdown component for React.
 

@@ -6,11 +6,14 @@ const projects = Router()
 projects.route('/')
   .get(ProjectsController.apiGetProjects)
   .post(ProjectsController.apiAddProject)
-  .delete(ProjectsController.apiDeleteProject)
 
 projects.route('/:id')
   .put(ProjectsController.apiUpdateProject)
   .get(ProjectsController.apiGetProjectById)
+  .delete(ProjectsController.apiDeleteProject)
+
+projects.route('/featured/:items')
+  .get(ProjectsController.apiGetFeaturedProjects)
 
 projects.route('/flush')
   .delete(ProjectsController.apiFlushProjects)

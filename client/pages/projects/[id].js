@@ -39,9 +39,9 @@ const Project = ({ project }) => {
             <p className='text-center font-bold pb-2'>Technologies</p>
             <div className='grid grid-cols-3 md:grid-cols-1'>
               {
-                project.technologies.map((tag) => {
+                project.technologies.map((tag, ix) => {
                   return (
-                    <p className='text-gray-600 py-2 flex items-center'>
+                    <p key={ix} className='text-gray-600 py-2 flex items-center'>
                       <RiRadioButtonFill className='pr-1' /> {tag}
                     </p>
                   )

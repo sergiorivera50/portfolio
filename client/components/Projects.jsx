@@ -1,5 +1,4 @@
 import React from 'react'
-import githubCloneImg from '../public/assets/projects/project.png'
 import ProjectItem from './ProjectItem'
 
 const Projects = ({ projects }) => {
@@ -15,7 +14,7 @@ const Projects = ({ projects }) => {
                 key={ix}
                 title={project.title} 
                 description={project.description} 
-                bgImg={githubCloneImg} 
+                bgImg={project.thumbnail} 
                 projectPath={`/projects/${project._id}`} 
               />
             ))

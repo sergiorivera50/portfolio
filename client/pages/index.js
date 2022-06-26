@@ -9,6 +9,10 @@ export async function getServerSideProps() {
   const { data } = await api.getFeaturedProjects(4)
   const { projects } = data
 
+  projects.map((project) => {
+    project.thumbnail = Buffer.from(project.thumbnail.data).toString("base64")
+  })
+
   return {
     props: { featuredProjects: projects }
   }

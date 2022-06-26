@@ -2,7 +2,6 @@ import React from 'react'
 import api from '../../services/project'
 import Image from 'next/image'
 import Link from 'next/link'
-import bgImg from '../../public/assets/projects/project.png'
 import { RiRadioButtonFill } from 'react-icons/ri'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -10,6 +9,8 @@ import remarkGfm from 'remark-gfm'
 export async function getServerSideProps({ params }) {
   const { data } = await api.getProjectById(params.id)
   const { project } = data
+
+  project.thumbnail = Buffer.from(project.thumbnail.data).toString("base64")
 
   return {
     props: { project }
@@ -21,7 +22,7 @@ const Project = ({ project }) => {
     <div className='w-full'>
       <div className='w-screen h-[30vh] lg:h-[40vh] relative'>
         <div className='absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/50 z-10' />
-          <Image className='absolute z-1' layout='fill' objectFit='cover' src={bgImg} alt='/' />
+          <Image className='absolute z-1' layout='fill' objectFit='cover' src={`data:image/png;base64,${project.thumbnail}`} alt='/' />
           <div className='absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2'>
             <h2 className='py-2'>{project.title}</h2>
             <h3>{project.description}</h3>

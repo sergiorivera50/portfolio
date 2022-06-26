@@ -29,13 +29,15 @@ export default class ProjectsController {
     const {
       title,
       description,
-      thumbnail,
       technologies,
       featured
     } = JSON.parse(metadataFile.data.toString())
 
     const markdownFile = req.files.markdown as fileUpload.UploadedFile
     const markdown = new TextDecoder('utf-8').decode(markdownFile.data)
+
+    const thumbnailFile = req.files.thumbnail as fileUpload.UploadedFile
+    const thumbnail = Buffer.from(thumbnailFile.data.buffer)
 
     try {
       const createdProject = await new ProjectModel({

@@ -5,7 +5,7 @@ const FormData = require('form-data')
 
 const api = axios.create({
   baseURL: 'http://localhost:8000/api/v1',
-  timeout: 10000,
+  timeout: 20000,
   headers: {
     'Content-type': 'application/json'
   }
@@ -40,5 +40,6 @@ fs.readdir('./projects', { withFileTypes: true }, async (err, dirs) => {
       .then((res) => 
         console.log(`Created project ${project} => ${res.data.created._id}`)
       )
+      .catch(err => console.error(err))
   })
 })

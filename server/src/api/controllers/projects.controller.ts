@@ -97,7 +97,7 @@ export default class ProjectsController {
   }
 
   static async apiDeleteProject(req: Request, res: Response) {
-    const { id } = req.query
+    const { id } = req.params
 
     try {
       const result = await ProjectModel.deleteOne({ _id: id })
@@ -113,6 +113,17 @@ export default class ProjectsController {
       const result = await ProjectModel.deleteMany({})
       return ExpressUtils.successResponse(res, { deleted: result })
     } catch (e) {
+      return ExpressUtils.errorResponse(res, e.message)
+    }
+  }
+
+  static async apiGetFeaturedProjects(req: Request, res: Response) {
+    const { items } = req.params
+    try {
+      const featured = await ProjectModel.find({ featured: true }).limit(Number(items))
+      return ExpressUtils.successResponse(res, { projects: featured })
+    } catch (e) {
+      console.log(e)
       return ExpressUtils.errorResponse(res, e.message)
     }
   }

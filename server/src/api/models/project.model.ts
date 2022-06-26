@@ -13,7 +13,7 @@ const ProjectSchema = new Schema({
   shortDescription: { type: String, required: true     },  // really short description
   fullDescription:  { type: String, required: true     },  // long description
   thumbnail:        { type: String, required: true     },  // thumbnail url
-  markdownContent:  { type: String, required: true     },  // full content in markdown
+  markdown:         { type: String, required: true     },  // full content in markdown
   status:           { type: String, required: true     },  // current status of the project
   tags:             { type: [String]                   },  // technologies, frameworks, techniques, ...
   resources:        { type: [Resource]                 },  // urls pointing to external resources

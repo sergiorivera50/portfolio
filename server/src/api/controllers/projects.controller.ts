@@ -1,6 +1,7 @@
 import { Request, Response } from 'express'
 import ProjectModel from "../models/project.model"
 import ExpressUtils from '../utils/express.util'
+import fileUpload from 'express-fileupload'
 
 export default class ProjectsController {
   static async apiGetProjects(req: Request, res: Response) {
@@ -30,12 +31,14 @@ export default class ProjectsController {
       shortDescription,
       fullDescription,
       thumbnail,
-      markdownContent,
       status,
       tags,
       resources,
       featured
     } = req.body
+
+    const { data } = req.files.markdown as fileUpload.UploadedFile
+    const decoded = new TextDecoder('utf-8').decode(data)
 
     try {
       const createdProject = await new ProjectModel({
@@ -44,7 +47,7 @@ export default class ProjectsController {
         shortDescription: shortDescription,
         fullDescription: fullDescription,
         thumbnail: thumbnail,
-        markdownContent: markdownContent,
+        markdown: decoded,
         status: status,
         tags: tags,
         resources: resources,

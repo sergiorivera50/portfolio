@@ -1,0 +1,13 @@
+{
+  "featured": true,
+  "title": "The Platform Publishing",
+  "description": "A Web3 start-up for the evolution of publishing",
+  "thumbnail": "test.com",
+  "technologies": [
+    "Solidity",
+    "Node.js",
+    "Next.js",
+    "Docker Swarm",
+    "AWS Services"
+  ]
+}

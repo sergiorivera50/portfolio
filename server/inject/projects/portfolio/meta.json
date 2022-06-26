@@ -1,0 +1,12 @@
+{
+  "featured": true,
+  "title": "Developer Portfolio",
+  "description": "A full-stack webapp built using MERN, Next.js and Tailwind CSS",
+  "technologies": [
+    "MongoDB",
+    "Express",
+    "Next.js",
+    "Node.js",
+    "Tailwind CSS"
+  ]
+}

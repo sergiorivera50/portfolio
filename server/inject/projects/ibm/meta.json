@@ -1,0 +1,12 @@
+{
+  "featured": true,
+  "title": "13-Month Internship at IBM",
+  "description": "My experience as an intern in IBM UK Labs in the z Automation Division",
+  "technologies": [
+    "Elasticsearch",
+    "Kibana",
+    "Kubernetes",
+    "Docker",
+    "Groovy"
+  ]
+}

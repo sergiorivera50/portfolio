@@ -7,12 +7,12 @@ projects.route('/')
   .get(ProjectsController.apiGetProjects)
   .post(ProjectsController.apiAddProject)
 
-projects.route('/:id')
+projects.route('/id/:id')
   .put(ProjectsController.apiUpdateProject)
   .get(ProjectsController.apiGetProjectById)
   .delete(ProjectsController.apiDeleteProject)
 
-projects.route('/featured/:items')
+projects.route('/featured')
   .get(ProjectsController.apiGetFeaturedProjects)
 
 projects.route('/flush')

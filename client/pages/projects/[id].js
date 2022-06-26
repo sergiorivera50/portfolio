@@ -21,7 +21,7 @@ const Project = ({ project }) => {
   return (
     <div className='w-full'>
       <div className='w-screen h-[30vh] lg:h-[40vh] relative'>
-        <div className='absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-gradient-to-b from-transparent to-[#ecf0f3] opacity-50 z-10' />
+        <div className='absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-gradient-to-b from-transparent via-transparent to-[#ecf0f3] opacity-50 z-10' />
           <Image className='absolute z-1' layout='fill' objectFit='cover' src={`data:image/png;base64,${project.thumbnail}`} alt='/' />
       </div>
 

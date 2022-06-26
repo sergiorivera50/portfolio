@@ -25,8 +25,6 @@ fs.readdir('./projects', { withFileTypes: true }, async (err, dirs) => {
   /* Create each project */
 
   projects.forEach(project => {
-    console.log(`Processing ${project}...`)
-    
     const form = new FormData()
     form.append('metadata', fs.createReadStream(`./projects/${project}/meta.json`))
     form.append('markdown', fs.createReadStream(`./projects/${project}/content.md`))
@@ -40,6 +38,8 @@ fs.readdir('./projects', { withFileTypes: true }, async (err, dirs) => {
       .then((res) => 
         console.log(`Created project ${project} => ${res.data.created._id}`)
       )
-      .catch(err => console.error(err))
+      .catch(err => {
+        console.error(`Error for ${project} => ${err.response.data.error}`)
+      })
   })
 })

@@ -1,7 +1,7 @@
 {
   "featured": true,
   "title": "Developer Portfolio",
-  "description": "A full-stack webapp built using MERN, Next.js and Tailwind CSS",
+  "description": "A full-stack webapp built using MERN, Next.js and Tailwind CSS.",
   "technologies": [
     "MongoDB",
     "Express",

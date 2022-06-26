@@ -1,8 +1,7 @@
 {
   "featured": true,
   "title": "The Platform Publishing",
-  "description": "A Web3 start-up for the evolution of publishing",
-  "thumbnail": "test.com",
+  "description": "An incubator for Web 3.0 publishing operating on the Permaweb.",
   "technologies": [
     "Solidity",
     "Node.js",

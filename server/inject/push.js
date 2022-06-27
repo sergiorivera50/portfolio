@@ -28,7 +28,6 @@ fs.readdir('./projects', { withFileTypes: true }, async (err, dirs) => {
     const form = new FormData()
     form.append('metadata', fs.createReadStream(`./projects/${project}/meta.json`))
     form.append('markdown', fs.createReadStream(`./projects/${project}/content.md`))
-    form.append('thumbnail', fs.createReadStream(`./projects/${project}/thumbnail.png`))
 
     const headers = {
       "Content-Type": `multipart/form-data; boundary=${form.getBoundary()}`
@@ -39,7 +38,9 @@ fs.readdir('./projects', { withFileTypes: true }, async (err, dirs) => {
         console.log(`Created project ${project} => ${res.data.created._id}`)
       )
       .catch(err => {
-        console.error(`Error for ${project} => ${err.response.data.error}`)
+        if (err.response !== undefined)
+          console.error(`Error for ${project} => ${err.response.data.error}`)
+        else console.error(err)
       })
   })
 })

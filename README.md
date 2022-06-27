@@ -1,3 +1,3 @@
 # portfolio
 
-Currently building the backend.
+Will update README on deployment

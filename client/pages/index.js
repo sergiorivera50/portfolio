@@ -3,11 +3,16 @@ import Image from 'next/image'
 import About from '../components/About'
 import Main from '../components/Main'
 import Projects from '../components/Projects'
+import { BACKEND_URL } from '../http'
 import api from '../services/project'
 
 export async function getServerSideProps() {
   const { data } = await api.getFeaturedProjects(4)
   const { projects } = data
+
+  projects.map(
+    project => project.thumbnail = `${BACKEND_URL}/static/${project._id}.png`
+  )
 
   return {
     props: { featuredProjects: projects }

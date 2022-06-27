@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 import ProjectModel from "../models/project.model"
 import ExpressUtils from '../utils/express.util'
 import fileUpload from 'express-fileupload'
+import fs from 'fs'
 
 export default class ProjectsController {
   static async apiGetProjects(req: Request, res: Response) {
@@ -36,6 +37,9 @@ export default class ProjectsController {
     const markdownFile = req.files.markdown as fileUpload.UploadedFile
     const markdown = new TextDecoder('utf-8').decode(markdownFile.data)
 
+    const thumbnailFile = req.files.thumbnail as fileUpload.UploadedFile
+    const thumbnail = Buffer.from(thumbnailFile.data.buffer)
+    
     try {
       const createdProject = await new ProjectModel({
         title: title,
@@ -44,7 +48,11 @@ export default class ProjectsController {
         technologies: technologies,
         featured: featured
       }).save()
-      return ExpressUtils.successResponse(res, { created: createdProject }, 201)
+
+      fs.writeFile(`public/${createdProject._id}.png`, thumbnailFile.data, (err) => {
+        if (err) return ExpressUtils.errorResponse(res, "Unable to save thumbnail")
+        return ExpressUtils.successResponse(res, { created: createdProject }, 201)
+      })
     } catch (e) {
       console.log(e)
       return ExpressUtils.errorResponse(res, "Unable to add project")
@@ -87,7 +95,10 @@ export default class ProjectsController {
     try {
       const result = await ProjectModel.deleteOne({ _id: id })
       if (result.deletedCount === 0) return ExpressUtils.errorResponse(res, "No documents deleted")
-      return ExpressUtils.successResponse(res, { deleted: { id, ...result } })
+      fs.unlink(`public/${id}.png`, (err) => {
+        if (err) return ExpressUtils.errorResponse(res, "Did not delete thumbnail")
+        return ExpressUtils.successResponse(res, { deleted: { id, ...result } })
+      })
     } catch (e) {
       return ExpressUtils.errorResponse(res, e.message)
     }
@@ -96,7 +107,16 @@ export default class ProjectsController {
   static async apiFlushProjects(req: Request, res: Response) {
     try {
       const result = await ProjectModel.deleteMany({})
-      return ExpressUtils.successResponse(res, { deleted: result })
+      fs.readdir(`public`, (err, files) => {
+        if (err) return ExpressUtils.errorResponse(res, "Cannot read /public")
+
+        for (const file of files) {
+          fs.unlink(`public/${file}`, err => {
+            if (err) return ExpressUtils.errorResponse(res, `Cannot delete /public/${file}`)
+          })
+        }
+        return ExpressUtils.successResponse(res, { deleted: result })
+      })
     } catch (e) {
       return ExpressUtils.errorResponse(res, e.message)
     }

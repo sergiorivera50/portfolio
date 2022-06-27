@@ -14,7 +14,7 @@ const Projects = ({ projects }) => {
                 key={ix}
                 title={project.title} 
                 description={project.description} 
-                imgSrc={`/../public/assets/thumbnails/${project._id}.png`} 
+                imgSrc={project.thumbnail} 
                 projectPath={`/projects/${project._id}`} 
               />
             ))

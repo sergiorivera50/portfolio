@@ -5,10 +5,13 @@ import Link from 'next/link'
 import { RiRadioButtonFill } from 'react-icons/ri'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { BACKEND_URL } from '../../http'
 
 export async function getServerSideProps({ params }) {
   const { data } = await api.getProjectById(params.id)
   const { project } = data
+
+  project.thumbnail = `${BACKEND_URL}/static/${project._id}.png`
 
   return {
     props: { project }
@@ -20,7 +23,7 @@ const Project = ({ project }) => {
     <div className='w-full'>
       <div className='w-screen h-[30vh] lg:h-[40vh] relative'>
         <div className='absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-gradient-to-b from-transparent via-transparent to-[#ecf0f3] opacity-50 z-10' />
-          <Image className='absolute z-1' layout='fill' objectFit='cover' src={`/../public/assets/thumbnails/${project._id}.png`} alt='/' />
+          <Image className='absolute z-1' layout='fill' objectFit='cover' src={project.thumbnail} alt='/' />
       </div>
 
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8'>

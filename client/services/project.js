@@ -1,15 +1,15 @@
-import http from '../http'
+import { client } from '../http'
 
 export default class {
   static async getAllProjects() {
-    return http.get(`/projects`)
+    return client.get(`/projects`)
   }
 
   static async getProjectById(id) {
-    return http.get(`/projects/id/${id}`)
+    return client.get(`/projects/id/${id}`)
   }
 
   static async getFeaturedProjects(items = 4) {
-    return http.get(`/projects/featured?items=${items}`)
+    return client.get(`/projects/featured?items=${items}`)
   }
 }

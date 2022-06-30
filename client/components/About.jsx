@@ -31,7 +31,7 @@ const About = () => {
             Inventore eius voluptatibus molestiae minus earum necessitatibus cum eum doloribus.
           </p>
           <Link href='/#projects'>
-            <p className='py-10 text-gray-600 cursor-pointer text-center rainbow-text hover:scale-[105%] ease-in duration-300'>
+            <p className='py-10 text-gray-600 cursor-pointer text-center rainbow-text hover:scale-[105%] linear duration-300'>
               Check out some of my latest projects
             </p>
           </Link>

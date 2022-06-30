@@ -1,4 +1,5 @@
 node_modules
 dist
 .env
-public
+public/*
+!public/README.md

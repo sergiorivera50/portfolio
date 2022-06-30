@@ -7,7 +7,7 @@ import { BACKEND_URL } from '../http'
 import api from '../services/project'
 
 export async function getServerSideProps() {
-  const { data } = await api.getFeaturedProjects(4)
+  const { data } = await api.getFeaturedProjects(6)
   const { projects } = data
 
   projects.map(

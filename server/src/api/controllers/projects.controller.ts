@@ -3,6 +3,7 @@ import ProjectModel from "../models/project.model"
 import ExpressUtils from '../utils/express.util'
 import fileUpload from 'express-fileupload'
 import fs from 'fs'
+import path from 'path'
 
 export default class ProjectsController {
   static async apiGetProjects(req: Request, res: Response) {
@@ -110,9 +111,11 @@ export default class ProjectsController {
       fs.readdir(`public`, (err, files) => {
         if (err) return ExpressUtils.errorResponse(res, "Cannot read /public")
 
-        for (const file of files) {
-          fs.unlink(`public/${file}`, err => {
-            if (err) return ExpressUtils.errorResponse(res, `Cannot delete /public/${file}`)
+        const pngs = files.filter(file => path.extname(file) === '.png')
+
+        for (const png of pngs) {
+          fs.unlink(`public/${png}`, err => {
+            if (err) return ExpressUtils.errorResponse(res, `Cannot delete /public/${png}`)
           })
         }
         return ExpressUtils.successResponse(res, { deleted: result })

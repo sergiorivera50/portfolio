@@ -9,7 +9,8 @@
     "start": "node dist/index.js",
     "dev": "NODE_ENV=development ./node_modules/.bin/ts-node-dev --watch=src/**/*.ts src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "standard-version"
+    "release": "standard-version",
+    "postrelease": "git push --follow-tags origin main"
   },
   "keywords": [],
   "author": "",

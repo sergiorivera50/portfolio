@@ -5,7 +5,7 @@ export default class ExpressUtils {
     return res.status(statusCode).send({ success: true, ...data })
   }
   
-  static errorResponse(res: Response, msg: String, statusCode=500) {
+  static errorResponse(res: Response, msg: string, statusCode=500) {
     return res.status(statusCode).send({ success: false, error: msg })
   }
 }

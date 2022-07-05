@@ -4,6 +4,7 @@ import ExpressUtils from '../utils/express.util'
 import fileUpload from 'express-fileupload'
 import fs from 'fs'
 import path from 'path'
+import { logger } from '../utils/logger.util'
 
 export default class ProjectsController {
   static async apiGetProjects(req: Request, res: Response) {
@@ -55,7 +56,7 @@ export default class ProjectsController {
         return ExpressUtils.successResponse(res, { created: createdProject }, 201)
       })
     } catch (e) {
-      console.log(e)
+      logger.error(e)
       return ExpressUtils.errorResponse(res, "Unable to add project")
     }
   }
@@ -85,7 +86,7 @@ export default class ProjectsController {
       const updatedProject = await ProjectModel.findByIdAndUpdate(id, newVersion, {returnDocument: 'after'})
       return ExpressUtils.successResponse(res, { updated: updatedProject })
     } catch (e) {
-      console.log(e)
+      logger.error(e)
       return ExpressUtils.errorResponse(res, `Unable to udpate project with id ${id}`)
     }
   }
@@ -97,10 +98,14 @@ export default class ProjectsController {
       const result = await ProjectModel.deleteOne({ _id: id })
       if (result.deletedCount === 0) return ExpressUtils.errorResponse(res, "No documents deleted")
       fs.unlink(`public/${id}.png`, (err) => {
-        if (err) return ExpressUtils.errorResponse(res, "Did not delete thumbnail")
+        if (err) {
+          logger.error(err.toString())
+          return ExpressUtils.errorResponse(res, "Did not delete thumbnail")
+        }
         return ExpressUtils.successResponse(res, { deleted: { id, ...result } })
       })
     } catch (e) {
+      logger.error(e)
       return ExpressUtils.errorResponse(res, e.message)
     }
   }
@@ -121,6 +126,7 @@ export default class ProjectsController {
         return ExpressUtils.successResponse(res, { deleted: result })
       })
     } catch (e) {
+      logger.error(e)
       return ExpressUtils.errorResponse(res, e.message)
     }
   }
@@ -131,7 +137,7 @@ export default class ProjectsController {
       const featured = await ProjectModel.find({ featured: true }).limit(Number(items))
       return ExpressUtils.successResponse(res, { projects: featured })
     } catch (e) {
-      console.log(e)
+      logger.error(e)
       return ExpressUtils.errorResponse(res, e.message)
     }
   }

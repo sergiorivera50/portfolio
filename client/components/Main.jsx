@@ -62,7 +62,7 @@ const Main = () => {
                 timing="ease"
                 iteration="1"
                 fillMode="backwards">
-                I&apos;m a Computer Science student specializing in <span className='font-bold rainbow-text'>Cloud Computing</span>, application of
+                I&apos;m a Computer Science student specializing in <span className='font-bold rainbow-text'>Microservices</span>, application of
                 <span className='font-bold rainbow-text'> Machine Learning</span> techniques and <span className='font-bold rainbow-text'>Blockchain</span> technologies. 
                 Backed by professional experience, open-source collaboration and personal dedication.
               </MovingComponent>

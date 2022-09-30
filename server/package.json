@@ -31,5 +31,8 @@
     "express-fileupload": "^1.4.0",
     "mongoose": "^6.3.5",
     "winston": "^3.8.1"
+  },
+  "engines": {
+    "node": "17.x"
   }
 }

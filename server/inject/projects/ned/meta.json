@@ -1,0 +1,11 @@
+{
+  "featured": true,
+  "title": "N.E.D. Boilerplate",
+  "description": "A lightweight yet powerful boilerplate for developing modern RESTful APIs with Node.js & Express",
+  "technologies": [
+    "Node.js",
+    "Express",
+    "Docker",
+    "Typescript"
+  ]
+}

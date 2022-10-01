@@ -5,7 +5,7 @@ import { FiCornerRightDown } from 'react-icons/fi'
 const Projects = ({ projects }) => {
   return (
     <div id='projects' className='w-full pt-[40px]'>
-      <div className='max-w-[1240px] mx-auto px-2 py-16'>
+      <div className='max-w-[1240px] mx-auto px-2'>  {/* Add py-16 if using Navbar */}
         <p className='text-xl tracking-widest uppercase text-[#5651e5]'>Projects</p>
         <div className='flex justify-between items-center'>
           <h2 className='py-2'>What I have built</h2>

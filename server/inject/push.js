@@ -3,13 +3,21 @@ const path = require('path')
 const axios = require('axios')
 const FormData = require('form-data')
 
+// const api = axios.create({
+//   baseURL: 'http://localhost:8000/api/v1',
+//   timeout: 20000,
+//   headers: {
+//     'Content-type': 'application/json'
+//   }
+// })
+
 const api = axios.create({
-  baseURL: 'http://localhost:8000/api/v1',
-  timeout: 20000,
-  headers: {
-    'Content-type': 'application/json'
-  }
-})
+    baseURL: 'http://sergiorivera-portfolio-server.herokuapp.com/api/v1',
+    timeout: 20000,
+    headers: {
+      'Content-type': 'application/json'
+    }
+  })
 
 let projects = []
 

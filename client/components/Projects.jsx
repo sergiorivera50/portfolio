@@ -44,7 +44,11 @@ const Projects = () => {
           {
             loadingProjects 
                 ? [...Array(6)].map((e, ix) => (
-                    <div className='relative flex h-80 w-full bg-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff] hover:scale-[98%] ease-in duration-200' key={ix} />
+                    <div className='relative flex h-80 w-full bg-gray-400 rounded-xl group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff] hover:scale-[98%] ease-in duration-200' key={ix}>
+                        <div className='load-wraper'>
+                            <div class="activity" />
+                        </div>
+                    </div>
                 ))
                 : (projects.length > 0)
                     ? projects.map((project, ix) => (

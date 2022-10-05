@@ -46,15 +46,17 @@ const Projects = () => {
                 ? [...Array(6)].map((e, ix) => (
                     <div className='relative flex h-80 w-full bg-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff] hover:scale-[98%] ease-in duration-200' key={ix} />
                 ))
-                : projects.map((project, ix) => (
-                    <ProjectItem 
-                        key={ix}
-                        title={project.title} 
-                        description={project.description} 
-                        imgSrc={project.thumbnail} 
-                        projectPath={`/projects/${project._id}`} 
-                    />
-                ))
+                : (projects.length > 0)
+                    ? projects.map((project, ix) => (
+                        <ProjectItem 
+                            key={ix}
+                            title={project.title} 
+                            description={project.description} 
+                            imgSrc={project.thumbnail} 
+                            projectPath={`/projects/${project._id}`} 
+                        />
+                    ))
+                    : ( <p>❗️ No projects could be fetched from backend</p> )
           }
         </div>
       </div>

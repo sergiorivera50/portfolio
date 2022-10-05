@@ -7,6 +7,7 @@ import api from '../services/project'
 
 const Projects = () => {
   const [projects, setProjects] = useState([])
+  const [loadingProjects, setLoadingProjects] = useState(true)
 
   const fetchProjects = async () => {
     const { data } = await api.getFeaturedProjects(6)
@@ -20,8 +21,12 @@ const Projects = () => {
   }
 
   useEffect(() => {
+    setLoadingProjects(true)
     fetchProjects()
-      .then(projects => setProjects(projects))
+      .then(projects => {
+        setProjects(projects)
+        //setLoadingProjects(false)
+      })
   }, [])
 
   return (
@@ -37,15 +42,19 @@ const Projects = () => {
         </div>
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-3'>
           {
-            projects.map((project, ix) => (
-              <ProjectItem 
-                key={ix}
-                title={project.title} 
-                description={project.description} 
-                imgSrc={project.thumbnail} 
-                projectPath={`/projects/${project._id}`} 
-              />
-            ))
+            loadingProjects 
+                ? [...Array(6)].map((e, ix) => (
+                    <div className='relative flex h-80 w-full bg-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff] hover:scale-[98%] ease-in duration-200' key={ix} />
+                ))
+                : projects.map((project, ix) => (
+                    <ProjectItem 
+                        key={ix}
+                        title={project.title} 
+                        description={project.description} 
+                        imgSrc={project.thumbnail} 
+                        projectPath={`/projects/${project._id}`} 
+                    />
+                ))
           }
         </div>
       </div>

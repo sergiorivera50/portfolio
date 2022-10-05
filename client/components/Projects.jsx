@@ -1,8 +1,29 @@
 import React from 'react'
 import ProjectItem from './ProjectItem'
 import { FiCornerRightDown } from 'react-icons/fi'
+import { useEffect, useState } from 'react'
+import { BACKEND_URL } from '../http'
+import api from '../services/project'
 
-const Projects = ({ projects }) => {
+const Projects = () => {
+  const [projects, setProjects] = useState([])
+
+  const fetchProjects = async () => {
+    const { data } = await api.getFeaturedProjects(6)
+    const { projects } = data
+
+    projects.map(
+      project => project.thumbnail = `${BACKEND_URL}/static/${project._id}.png`
+    )
+
+    return projects
+  }
+
+  useEffect(() => {
+    fetchProjects()
+      .then(projects => setProjects(projects))
+  }, [])
+
   return (
     <div id='projects' className='w-full pt-[40px]'>
       <div className='max-w-[1240px] mx-auto px-2'>  {/* Add py-16 if using Navbar */}

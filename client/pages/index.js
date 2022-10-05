@@ -1,25 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import About from '../components/About'
 import Main from '../components/Main'
 import Projects from '../components/Projects'
-import { BACKEND_URL } from '../http'
-import api from '../services/project'
 
-export async function getServerSideProps() {
-  const { data } = await api.getFeaturedProjects(6)
-  const { projects } = data
-
-  projects.map(
-    project => project.thumbnail = `${BACKEND_URL}/static/${project._id}.png`
-  )
-
-  return {
-    props: { featuredProjects: projects }
-  }
-}
-
-export default function Home({ featuredProjects }) {
+export default function Home() {
   return (
     <div>
       <Head>
@@ -29,7 +13,7 @@ export default function Home({ featuredProjects }) {
       </Head>
       <Main />
       <About />
-      <Projects projects={ featuredProjects } />
+      <Projects />
     </div>
   )
 }

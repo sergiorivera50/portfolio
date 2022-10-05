@@ -25,7 +25,7 @@ const Projects = () => {
     fetchProjects()
       .then(projects => {
         setProjects(projects)
-        //setLoadingProjects(false)
+        setLoadingProjects(false)
       })
   }, [])
 

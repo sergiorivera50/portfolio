@@ -77,7 +77,7 @@ html {
   width: 100%;
   z-index: 44;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 0.75rem;
 }
 
 .activity{

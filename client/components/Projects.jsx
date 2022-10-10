@@ -44,7 +44,7 @@ const Projects = () => {
           {
             loadingProjects 
                 ? [...Array(6)].map((e, ix) => (
-                    <div className='relative flex h-80 w-full bg-gray-300 shadow-xl shadow-gray-300 rounded-xl group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff] hover:scale-[98%] ease-in duration-200' key={ix}>
+                    <div className='relative flex h-80 w-full bg-gray-300 shadow-xl shadow-gray-300 rounded-xl group' key={ix}>
                         <div className='load-wraper'>
                             <div class="activity" />
                         </div>

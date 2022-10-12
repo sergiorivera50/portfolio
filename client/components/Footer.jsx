@@ -1,10 +1,10 @@
 import React from 'react'
-import { version } from '../package.json'
+import packageInfo from '../package.json'
 
 const Footer = () => {
   return (
     <div className='py-4 mr-8 flex justify-end'>
-      <p className='text-gray-400'>v{version}</p>
+      <p className='text-gray-400'>v{packageInfo.version}</p>
     </div>
   )
 }

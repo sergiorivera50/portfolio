@@ -76,13 +76,11 @@ const Main = () => {
               timing="ease"
               iteration="1"
               fillMode="backwards">
-              <div className='p-6 cursor-pointer hover:scale-[130%] ease-in duration-200'>
                 <Link href='/#about'>
-                  <a>
+                  <div className='p-6 cursor-pointer hover:scale-[130%] ease-in duration-200'>
                     <VscArrowDown size={20} />
-                  </a>
+                  </div>
                 </Link> 
-              </div>
             </MovingComponent>
           </div>
         </div>

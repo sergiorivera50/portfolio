@@ -52,7 +52,7 @@ const About = () => {
               <Link href={process.env.CV_URL || '/#about'}>
                 <div className='relative w-40 left-[50%] translate-x-[-50%]'>
                   <a style={{textDecoration: 'none'}}>
-                  <p className='text-center py-3 rounded-lg border-[2px] border-[#5651e5] text-black text-lg cursor-pointer hover:scale-105 ease-in duration-300'>Download CV</p>
+                  <p className='text-center py-3 rounded-lg border-[1px] border-[#5651e5] text-black text-lg cursor-pointer hover:scale-105 ease-in duration-300'>Download CV</p>
                   </a>
                 </div>
               </Link>

@@ -18,7 +18,7 @@ const About = () => {
             Driven by passion and diligence, I've managed to endeavor on many areas of the Computer Science landscape
             while maintaining a career focus on Artifical Intelligence and Data Science.
           </p>
-          <p className='py-2 text-gray-600 text-justify'>
+          <p className='py-2 text-gray-600 text-justify'>  {/* Mention NLP work in IBM, polish The Platform */}
             My most recent professional experience has been a 13-month internship with <strong>IBM</strong> at Hursley 
             where I had the privilege to work alongside brilliant minds leveraging technologies such as Kubernetes, Jenkins 
             and the Elastic Stack for the centralisation of logging and monitoring pipelines. It was during my placement that

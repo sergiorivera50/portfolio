@@ -9,6 +9,7 @@ const nextConfig = {
     BACKEND_DOMAIN: process.env.BACKEND_DOMAIN, 
     BACKEND_PORT: process.env.BACKEND_PORT,
     API_ROUTE: process.env.API_ROUTE,
+    CV_URL: process.env.CV_URL
   }
 }
 

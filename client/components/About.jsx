@@ -33,11 +33,31 @@ const About = () => {
             where I experimented with the concept of increasing the resolution of CT scans through artificially generated slices. 
             I expect to graduate on 2023 with a first-class (with honours) in Computer Science.
           </p>
-          <Link href='/#projects'>
+          {/* <Link href='/#projects'>
             <p className='py-10 text-gray-600 cursor-pointer text-center rainbow-text hover:scale-[105%] linear duration-300'>
               Check out some of my latest projects
             </p>
-          </Link>
+          </Link> */}
+          <div className='sm:grid grid-cols-2 py-4 mb-6'>
+            <div className='sm:flex justify-end'>
+              <Link href='/#projects'>
+                <div className='relative w-60 left-[50%] translate-x-[-50%] mb-4'>
+                  <a style={{textDecoration: 'none'}}>
+                    <p className='text-center py-3 rounded-lg bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white text-lg cursor-pointer hover:scale-105 ease-in duration-300'>Check out my projects</p>
+                  </a>
+                </div>
+              </Link>
+            </div>
+            <div className='sm:flex'>
+              <Link href={process.env.CV_URL || '/#about'}>
+                <div className='relative w-40 left-[50%] translate-x-[-50%]'>
+                  <a style={{textDecoration: 'none'}}>
+                  <p className='text-center py-3 rounded-lg border-[1px] border-[#5651e5] text-black text-lg cursor-pointer hover:scale-105 ease-in duration-300'>Download CV</p>
+                  </a>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
         <div className='w-full h-auto m-auto shadow-xl shadow-gray-400 flex items-center justify-center hover:scale-105 ease-in duration-300'>
           <Image 

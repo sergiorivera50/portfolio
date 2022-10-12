@@ -30,7 +30,7 @@ const Projects = () => {
   }, [])
 
   return (
-    <div id='projects' className='w-full pt-[40px]'>
+    <div id='projects' className='w-full pt-[40px] px-4'>
       <div className='max-w-[1240px] mx-auto px-2'>  {/* Add py-16 if using Navbar */}
         <p className='text-xl tracking-widest uppercase text-[#5651e5]'>Projects</p>
         <div className='flex justify-between items-center'>

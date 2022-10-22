@@ -32,14 +32,16 @@ export default class Main extends React.Component {
         <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
           <div>
             <h1 className='uppercase text-sm font-normal tracking-widest text-gray-600'>
-            <MovingComponent type="typewriter"
-              dataText={[
-                'Machine Learning',
-                'Backend Dev',
-                'Data Science',
-                'Infrastructure',
-                'DevOps'
-              ]} />
+              {this.state.showAnimation ? (
+                <MovingComponent type="typewriter"
+                  dataText={[
+                    'Machine Learning',
+                    'Backend Dev',
+                    'Data Science',
+                    'Infrastructure',
+                    'DevOps'
+                  ]} />
+                ) : ''}
             </h1>
             <h1 className='py-4 text-gray-700'>
               {this.state.showAnimation ? (
@@ -56,46 +58,52 @@ export default class Main extends React.Component {
               ) : ''}
             </h1>
             <h1 className='uppercase text-2xl tracking-widest py-2 text-gray-700'>
-              <MovingComponent
-                type="popIn"
-                duration="1000ms"
-                delay="0.1s"
-                direction="normal"
-                timing="ease"
-                iteration="1"
-                fillMode="backwards">
-                Welcome to my developer portfolio
-              </MovingComponent>
-            </h1>
-            <h1 className='py-4 text-xl font-normal text-gray-600 max-w-[70%] m-auto'>
-              <MovingComponent
-                  type="fadeIn"
-                  duration="800ms"
-                  delay="0.4s"
+              {this.state.showAnimation ? (
+                <MovingComponent
+                  type="popIn"
+                  duration="1000ms"
+                  delay="0.1s"
                   direction="normal"
                   timing="ease"
                   iteration="1"
                   fillMode="backwards">
-                  I&apos;m a Computer Science student specializing in <span className='font-bold rainbow-text'>Microservices</span>, application of
-                  <span className='font-bold rainbow-text'> Machine Learning</span> techniques and <span className='font-bold rainbow-text'>Blockchain</span> technologies. 
-                  Backed by professional experience, open-source collaboration and personal dedication.
+                  Welcome to my developer portfolio
                 </MovingComponent>
+              ) : ''}
+            </h1>
+            <h1 className='py-4 text-xl font-normal text-gray-600 max-w-[70%] m-auto'>
+              {this.state.showAnimation ? (
+                <MovingComponent
+                    type="fadeIn"
+                    duration="800ms"
+                    delay="0.4s"
+                    direction="normal"
+                    timing="ease"
+                    iteration="1"
+                    fillMode="backwards">
+                    I&apos;m a Computer Science student specializing in <span className='font-bold rainbow-text'>Microservices</span>, application of
+                    <span className='font-bold rainbow-text'> Machine Learning</span> techniques and <span className='font-bold rainbow-text'>Blockchain</span> technologies. 
+                    Backed by professional experience, open-source collaboration and personal dedication.
+                  </MovingComponent>
+                ) : ''}
             </h1>
             <div className='flex items-center justify-center max-w-[330px] m-auto py-4'>
-              <MovingComponent
-                type="fadeInFromBottom"
-                duration="400ms"
-                delay="800ms"
-                direction="normal"
-                timing="ease"
-                iteration="1"
-                fillMode="backwards">
-                  <Link href='/#about'>
-                    <div className='p-6 cursor-pointer hover:scale-[130%] ease-in duration-200'>
-                      <VscArrowDown size={20} />
-                    </div>
-                  </Link> 
-              </MovingComponent>
+              {this.state.showAnimation ? (
+                <MovingComponent
+                  type="fadeInFromBottom"
+                  duration="400ms"
+                  delay="800ms"
+                  direction="normal"
+                  timing="ease"
+                  iteration="1"
+                  fillMode="backwards">
+                    <Link href='/#about'>
+                      <div className='p-6 cursor-pointer hover:scale-[130%] ease-in duration-200'>
+                        <VscArrowDown size={20} />
+                      </div>
+                    </Link> 
+                </MovingComponent>
+              ) : ''}
             </div>
           </div>
         </div>

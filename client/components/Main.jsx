@@ -98,7 +98,7 @@ export default class Main extends React.Component {
                   iteration="1"
                   fillMode="backwards">
                     <Link href='/#about'>
-                      <div className='p-6 cursor-pointer hover:scale-[130%] ease-in duration-200'>
+                      <div className='p-6 cursor-pointer animate-bounce delay-100 rounded-full hover:scale-[130%] hover:bg-[#5651e5] hover:bg-opacity-5 ease-in duration-200'>
                         <VscArrowDown size={20} />
                       </div>
                     </Link> 

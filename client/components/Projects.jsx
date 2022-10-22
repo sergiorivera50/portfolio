@@ -1,33 +1,23 @@
 import React from 'react'
 import ProjectItem from './ProjectItem'
 import { FiCornerRightDown } from 'react-icons/fi'
-import { useEffect, useState } from 'react'
-import { BACKEND_URL } from '../http'
-import api from '../services/project'
+import useProjects from '../hooks/useProjects'
 
 const Projects = () => {
-  const [projects, setProjects] = useState([])
-  const [loadingProjects, setLoadingProjects] = useState(true)
+  const items = 6
 
-  const fetchProjects = async () => {
-    const { data } = await api.getFeaturedProjects(6)
-    const { projects } = data
+  const { loadingProjects, projects } = useProjects(items)
 
-    projects.map(
-      project => project.thumbnail = `${BACKEND_URL}/static/${project._id}.png`
+  if (!loadingProjects && projects.length < 1) {
+    return (
+      <p id='projects' className='text-center'>
+        ❗️ No projects could be fetched from backend, please contact {' '}
+        <a href='mailto: sriveralopez50@gmail.com'>
+          sriveralopez50@gmail.com
+        </a>
+      </p>
     )
-
-    return projects
   }
-
-  useEffect(() => {
-    setLoadingProjects(true)
-    fetchProjects()
-      .then(projects => {
-        setProjects(projects)
-        setLoadingProjects(false)
-      })
-  }, [])
 
   return (
     <div id='projects' className='w-full pt-[40px] px-4'>
@@ -43,24 +33,12 @@ const Projects = () => {
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-3'>
           {
             loadingProjects 
-                ? [...Array(6)].map((e, ix) => (
-                    <div className='relative flex h-80 w-full bg-gray-300 shadow-xl shadow-gray-300 rounded-xl group' key={ix}>
-                        <div className='load-wraper'>
-                            <div class="activity" />
-                        </div>
-                    </div>
-                ))
-                : (projects.length > 0)
-                    ? projects.map((project, ix) => (
-                        <ProjectItem 
-                            key={ix}
-                            title={project.title} 
-                            description={project.description} 
-                            imgSrc={project.thumbnail} 
-                            projectPath={`/projects/${project._id}`} 
-                        />
-                    ))
-                    : ( <p>❗️ No projects could be fetched from backend</p> )
+              ? [...Array(items)].map((e, ix) => (
+                <ProjectItem key={ix} placeholder />
+              )) 
+              : projects.map((project, ix) => (
+                <ProjectItem key={ix} project={project} />
+              ))
           }
         </div>
       </div>

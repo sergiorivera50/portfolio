@@ -3,24 +3,15 @@ import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import { AiOutlineMail } from 'react-icons/ai'
 import { VscArrowDown } from 'react-icons/vsc'
 import MovingComponent from 'react-moving-text'
-import quotes from '../quotes.json'
 import Link from 'next/link'
 
 const Main = () => {
-  const [randQuote, setRandQuote] = useState(null)
-
-
-  useEffect(() => {
-    const quote = quotes[Math.floor(Math.random()*quotes.length)]
-    setRandQuote(quote)
-  }, [])
-
   return (
     <div id='home' className='w-full h-screen text-center'>
       {/* <div className='w-full h-10 bg-gradient-to-r from-[#5651e5df] to-[#709dff] sticky top-0 flex justify-center items-center'>
         <div className='w-full text-slate-200 whitespace-nowrap overflow-hidden'>
           <TextScroller duration={20000}>
-            LATEST PROJECT: CT2CT A generative Adversarial Networks exploration | MONTHLY STATS: 36 GitHub commits, 5 Vercel deployments, 6 CloudFlare domains, 2 new repos | QOD: {randQuote}
+            LATEST PROJECT: CT2CT A generative Adversarial Networks exploration | MONTHLY STATS: 36 GitHub commits, 5 Vercel deployments, 6 CloudFlare domains, 2 new repos
           </TextScroller>
         </div>
       </div> */}

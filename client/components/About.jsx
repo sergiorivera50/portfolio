@@ -6,13 +6,13 @@ import Link from 'next/link'
 
 const About = () => {
   return (
-    <div id='about' className='w-full md:h-screen p-2 flex items-center py-16 px-4'>
-      <div className='max-w-[1240px] m-auto md:grid grid-cols-3 gap-8'>
+    <div id='about' className='w-full lg:h-screen p-2 flex items-center py-16 px-4'>
+      <div className='max-w-[1240px] m-auto lg:grid grid-cols-3 gap-8'>
         <div className='col-span-2'>
           <p className='uppercase text-xl tracking-widest text-[#5651e5]'>About</p>
           <h2 className='py-4'>A little bit about me</h2>
           <p className='py-2 text-gray-400 text-justify'>
-            My name is Sergio, and I'm a software developer currently residing in Wales 🏴󠁧󠁢󠁷󠁬󠁳󠁿
+            My name is Sergio, I'm a software developer currently residing in the United Kingdom 🇬🇧
           </p>
           <p className='py-2 text-gray-600 text-justify'>
             Driven by passion and diligence, I've managed to endeavor on many areas of the Computer Science landscape
@@ -21,10 +21,9 @@ const About = () => {
           <p className='py-2 text-gray-600 text-justify'>  {/* Mention NLP work in IBM, polish The Platform */}
             My most recent professional experience has been a 13-month internship with <strong>IBM</strong> at Hursley 
             where I had the privilege to work alongside brilliant minds leveraging technologies such as Kubernetes, Jenkins 
-            and the Elastic Stack for the centralisation of logging and monitoring pipelines. It was during my placement that
-            I co-founded <strong>The Platform</strong>, a revolutionary new form of publishing for the Web3 ecosystem, where
-            I created many of the open-source tools that our clients now use as well as various internal APIs and infrastructure
-            requirements.
+            and the Elastic Stack for the centralisation of logging and monitoring pipelines. It was during my placement when
+            I co-founded <strong>The Platform</strong>, a new form of online publishing heavily influenced by the Web3 ecosystem, where
+            I created many of the open-source tools that our clients now use as well as various internal APIs and the automation of our infrastructure.
           </p>
           <p className='py-2 text-gray-600 text-justify'>
             At the moment, I'm working on my final year project at <strong>Swansea University</strong> regarding the use of
@@ -38,8 +37,8 @@ const About = () => {
               Check out some of my latest projects
             </p>
           </Link> */}
-          <div className='sm:grid grid-cols-2 py-4 mb-6'>
-            <div className='sm:flex justify-end'>
+          <div className='lg:grid grid-cols-2 py-4 mb-6'>
+            <div className='lg:flex justify-end'>
               <Link href='/#projects'>
                 <div className='relative w-60 left-[50%] translate-x-[-50%] mb-4'>
                   <a style={{textDecoration: 'none'}}>
@@ -48,18 +47,18 @@ const About = () => {
                 </div>
               </Link>
             </div>
-            <div className='sm:flex'>
+            <div className='lg:flex'>
               <Link href={process.env.CV_URL || '/#about'}>
                 <div className='relative w-40 left-[50%] translate-x-[-50%]'>
                   <a style={{textDecoration: 'none'}}>
-                  <p className='text-center py-3 rounded-lg border-[1px] border-[#5651e5] text-black text-lg cursor-pointer hover:scale-105 ease-in duration-300'>Download CV</p>
+                    <p className='text-center py-3 rounded-lg bg-[#ecf0f3] hover:bg-[#f4f6f7] border-[1px] border-[#5651e5] text-black text-lg cursor-pointer hover:scale-105 ease-in duration-300'>Download CV</p>
                   </a>
                 </div>
               </Link>
             </div>
           </div>
         </div>
-        <div className='w-full h-auto m-auto shadow-xl shadow-gray-400 flex items-center justify-center hover:scale-105 ease-in duration-300'>
+        <div className='w-[80%] h-auto sm:w-[70%] lg:w-full m-auto shadow-xl shadow-gray-400 flex items-center justify-center hover:scale-105 ease-in duration-300'>
           <Image 
             src={bodyImg}
             alt='/'

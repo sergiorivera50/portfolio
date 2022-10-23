@@ -12,7 +12,7 @@ module.exports = {
   BACKEND_URL, API_ROUTE, 
   client: axios.create({
     baseURL: `${BACKEND_URL}${API_ROUTE}`,
-    timeout: 10000,
+    timeout: 20000,
     headers: {
       'Content-type': 'application/json'
     }

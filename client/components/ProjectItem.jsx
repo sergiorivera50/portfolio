@@ -16,7 +16,9 @@ const ProjectItem = ({ project, placeholder }) => {
           <p className='pb-4 pt-2 text-white text-center'>{project.description}</p>
           <Link href={`/projects/${project._id}`}>
             <div className='relative w-40 left-[50%] translate-x-[-50%]'>
-              <ComplexButton before='Learn more' after='Fetching...'/>
+              <ComplexButton loading='Fetching...'>
+                Learn more
+              </ComplexButton>
             </div>
           </Link>
         </div>

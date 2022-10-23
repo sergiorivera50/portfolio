@@ -4,12 +4,23 @@ import Link from 'next/link'
 import { RiRadioButtonFill } from 'react-icons/ri'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import ComplexButton from './ComplexButton'
 
 const ProjectDetail = ({ project }) => {
   return (
     <div className='w-full'>
-      <div className='w-screen h-[30vh] lg:h-[40vh] relative'>
-        <div className='absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-gradient-to-b from-transparent via-transparent to-[#ecf0f3] opacity-50 z-10' />
+      <div className='z-50 h-10 w-40 sticky top-0 flex justify-center items-center'>
+        <Link href='/#projects'>
+          <div className='w-full ml-2 mt-8'>
+              <ComplexButton secondary>
+                Go Back
+              </ComplexButton>
+          </div>
+        </Link>
+      </div>
+
+      <div className='w-screen mt-[-4rem] h-[30vh] lg:h-[40vh] relative'>
+        <div className='absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-gradient-to-b from-transparent via-transparent to-[#ecf0f3] opacity-100 z-10' /> {/* Turn down opacity for harsher line */}
           <Image className='absolute z-1' layout='fill' objectFit='cover' src={project.thumbnail} alt='/' />
       </div>
 
@@ -34,9 +45,6 @@ const ProjectDetail = ({ project }) => {
             </div>
           </div>
         </div>
-        <Link href='/#projects'>
-          <p className='underline cursor-pointer'>Go Back</p>
-        </Link>
       </div>
     </div>
   )

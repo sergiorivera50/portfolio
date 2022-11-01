@@ -26,9 +26,8 @@ const About = () => {
             I created many of the open-source tools that our clients now use as well as various internal APIs and the automation of our infrastructure.
           </p>
           <p className='py-2 text-gray-600 text-justify'>
-            Currently, I'm working on my final year project at <strong>Swansea University</strong> regarding the use of
-            Generative Adversarial Networks for the generation of synthetic datasets.
-            I expect to graduate on 2023 with a first-class (with honours) in Computer Science.
+            Currently, I'm working on my final year project at <strong>Swansea University</strong> regarding the use of Generative Adversarial Networks 
+            for the generation of synthetic datasets, where I expect to graduate in 2023 with a first-class degree (with honours) in Computer Science.
           </p>
           {/* <Link href='/#projects'>
             <p className='py-10 text-gray-600 cursor-pointer text-center rainbow-text hover:scale-[105%] linear duration-300'>

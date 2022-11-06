@@ -1,6 +1,6 @@
 {
   "featured": true,
-  "title": "CT2CT",
+  "title": "Kubernetes Automation",
   "description": "A cGAN purposely trained for the generation of intermediate slices in CT scans",
   "technologies": [
     "Python",

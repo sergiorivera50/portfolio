@@ -35,21 +35,17 @@ const About = () => {
             </p>
           </Link> */}
           <div className='lg:grid grid-cols-2 py-4 mb-6'>
-            <div className='lg:flex justify-end'>
-              <Link href='/#projects'>
+            <div className='lg:flex justify-end hidden sm:visible'>
+              <Link href='/#projects' className='no-underline'>
                 <div className='relative w-60 left-[50%] translate-x-[-50%] mb-4'>
-                  <a style={{textDecoration: 'none'}}>
-                    <p className='text-center py-3 rounded-lg bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white text-lg cursor-pointer hover:scale-105 ease-in duration-300'>Check out my projects</p>
-                  </a>
+                  <p className='text-center py-3 rounded-lg bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white text-lg cursor-pointer hover:scale-105 ease-in duration-300'>Check out my projects</p>
                 </div>
               </Link>
             </div>
-            <div className='lg:flex'>
-              <Link href={process.env.CV_URL || '/#about'}>
+            <div className='lg:flex lg:ml-6'>
+              <Link href={process.env.CV_URL || '/#about'} className='no-underline'>
                 <div className='relative w-40 left-[50%] translate-x-[-50%]'>
-                  <a style={{textDecoration: 'none'}}>
-                    <p className='text-center py-3 rounded-lg bg-[#ecf0f3] hover:bg-[#f4f6f7] border-[1px] border-[#5651e5] text-black text-lg cursor-pointer hover:scale-105 ease-in duration-300'>Download CV</p>
-                  </a>
+                  <p className='text-center py-3 rounded-lg bg-[#ecf0f3] hover:bg-[#f4f6f7] border-[1px] border-[#5651e5] text-black text-lg cursor-pointer hover:scale-105 ease-in duration-300'>Download CV</p>
                 </div>
               </Link>
             </div>

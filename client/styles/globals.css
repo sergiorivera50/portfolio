@@ -32,8 +32,12 @@ html {
     @apply underline
   }
 
+  .markdown {
+    @apply whitespace-pre-wrap text-justify
+  }
+
   .markdown li {
-    @apply cursor-default
+    @apply cursor-default ml-8
   }
 
   .markdown ul {

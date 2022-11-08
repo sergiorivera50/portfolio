@@ -5,6 +5,7 @@ import { RiRadioButtonFill } from 'react-icons/ri'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import ComplexButton from './ComplexButton'
+import remarkBreaks from 'remark-breaks'
 
 const ProjectDetail = ({ project }) => {
   return (
@@ -27,7 +28,7 @@ const ProjectDetail = ({ project }) => {
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8'>
         <div className='col-span-4'>
           <p className='text-gray-500'>Last updated 26th June 2022</p>
-          <ReactMarkdown className='markdown' children={project.markdown} remarkPlugins={[remarkGfm]}/>
+          <ReactMarkdown className='markdown' children={project.markdown} linkTarget={"_blank"} remarkPlugins={[]}/>
         </div>
         <div className='col-span-4 max-h-80 md:col-span-1 border-black border-[1px] shadow-xl shadow-gray-400 rounded-xl p-4'>
           <div className='p-2'>

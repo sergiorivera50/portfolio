@@ -23,7 +23,7 @@ const ComplexButton = ({loading, ...props}) => {
         w-full py-3 text-lg capitalize font-medium 
       bg-white rounded-lg border 
         ${props.secondary 
-            ? 'border-[1px] border-[#5651e5] bg-opacity-90 text-gray-700 hover:border-0 hover:bg-gradient-to-r from-[#5651e5] to-[#709dff] hover:text-white ease-in duration-100' 
+            ? 'border-[1px] border-[#5651e5] bg-opacity-90 text-gray-700 hover:bg-gradient-to-r from-[#5651e5] to-[#709dff] hover:text-white ease-in duration-100' 
             : 'text-gray-700 border-gray-200'}
       `}
     >

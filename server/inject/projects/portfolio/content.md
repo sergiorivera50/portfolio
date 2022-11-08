@@ -12,6 +12,6 @@ The frontend is built with Next.js and Tailwind CSS, both really useful technolo
 
 Regarding deployment, the client is hosted in a popular platform known as Vercel, and the server is in Heroku. However, the latter will most likely change as I migrate to my own Kubernetes infrastructure (make sure to visit that project, too!).
 
-## 🌐 Useful Links
+## 🌐 Related Links
 
 You might want to visit... [this website](https://www.sergiorivera.dev)? Otherwise, please take a look at [the code](https://github.com/sergiorivera50/portfolio) that makes it happen

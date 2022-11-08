@@ -12,6 +12,6 @@ In late 2019, when I began university, I came across the Pix2Pix paper. There, t
 
 A competition by a Spanish YouTuber ([*DotCSV*](https://www.youtube.com/c/DotCSV)), where he proposed an image-to-image implementation jam, was my starting point. During said contest, I created, trained and evaluated a *conditional* Generative Adversarial Network with the purpose of generating inner slices of the brain. Although I was not the winner (understandably due to the brilliance of the other candidates), my project was mentioned and briefly showcased in one of his videos, amassing +60k views.
 
-## 🌐 Useful Links
+## 🌐 Related Links
 
 If you are interested in looking at the code, please [visit the repo](https://github.com/sergiorivera50/CT2CT). You should also check out [the video](https://youtu.be/BerOC6n8j9Q?t=1011) where my project was mentioned.

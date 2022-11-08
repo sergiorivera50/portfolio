@@ -1,5 +1,1 @@
-# CT2CT: Resolution Augmentation of Computed Tomography (CT) Scans
-
-## 📝Abstract
-The reconstruction of 3D encephala requires to perform the patient a Computed Tomography exam so that "slices" or sections of their head are obtained. The use of conventional systems usually extracts between 100 and 300 slices per patient, higher numbers would imply a longer exposure of the patient to radiation. A 2009 study of medical centers in the San Francisco Bay Area calculated that there is one extra case of cancer for every 400 to 2,000 routine chest CT exams. This has been linked to the abusive execution of the phenomena known as "defensive medicine", meaning that many CT Scans are not necessary and its overuse can potentially harm the patient if performed repeatedly under the said practice.
-Using the CT2CT system (based on Pix2Pix technology), it is now possible to achieve a high number of slices of the encephalon only by scanning a lower number of "key slices" that allow the model to predict the non-scanned parts of the brain. This way, the time of exposure to radiation gets reduced significantly and the number of 2D slices can even be increased by a factor of 10.
+# Kubernetes Automation

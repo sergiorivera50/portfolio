@@ -1,7 +1,7 @@
 {
   "featured": true,
-  "title": "CT2CT",
-  "description": "A cGAN purposely trained for the generation of intermediate slices in CT scans",
+  "title": "CT2CT (Pix2Pix)",
+  "description": "A cGAN model purposely trained for the generation of intermediate slices in CT scans",
   "technologies": [
     "Python",
     "TensorFlow",

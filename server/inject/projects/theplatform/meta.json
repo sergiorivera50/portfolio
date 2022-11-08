@@ -1,7 +1,7 @@
 {
   "featured": true,
   "title": "The Platform Publishing",
-  "description": "The new form of Web3 publishing operating on the Permaweb",
+  "description": "A new form of digital publishing operating on Web3 principles like the Permaweb",
   "technologies": [
     "Solidity",
     "Node.js",

@@ -1,11 +1,11 @@
 {
   "featured": true,
   "title": "Kubernetes Automation",
-  "description": "A cGAN purposely trained for the generation of intermediate slices in CT scans",
+  "description": "An automated pipeline for deploying Kubernetes infrastructure using GitOps principles with Terraform and Argo CD",
   "technologies": [
-    "Python",
-    "TensorFlow",
-    "Keras",
-    "Numpy"
+    "Kubernetes",
+    "Terraform",
+    "Argo CD",
+    "NGINX"
   ]
 }

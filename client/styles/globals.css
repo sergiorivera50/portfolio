@@ -49,7 +49,11 @@ html {
   }
 
   .markdown a {
-    @apply rainbow-text
+    @apply rainbow-text decoration-[#5651e5] decoration-2
+  }
+
+  .markdown a:hover {
+    @apply no-underline
   }
 
   .markdown ul {

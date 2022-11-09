@@ -28,7 +28,7 @@ const ProjectDetail = ({ project }) => {
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8'>
         <div className='col-span-4 pr-4'>
           <p className='text-gray-500'>Last updated 26th June 2022</p>
-          <ReactMarkdown className='markdown' children={project.markdown} linkTarget={"_blank"} remarkPlugins={[]}/>
+          <ReactMarkdown className='markdown' children={project.markdown} linkTarget={"_blank"}/>
         </div>
         <div className='col-span-4 max-h-80 mt-10 md:col-span-1 border-black border-[1px] shadow-xl shadow-gray-400 rounded-xl p-4'>
           <div className='p-2'>

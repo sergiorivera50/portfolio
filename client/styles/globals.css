@@ -33,11 +33,23 @@ html {
   }
 
   .markdown {
-    @apply whitespace-pre-wrap text-justify
+    @apply text-justify
   }
 
   .markdown li {
     @apply cursor-default ml-8
+  }
+
+  .markdown p {
+    @apply mb-4
+  }
+
+  .markdown li p {
+    @apply mb-2
+  }
+
+  .markdown a {
+    @apply rainbow-text
   }
 
   .markdown ul {

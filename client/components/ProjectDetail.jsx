@@ -30,15 +30,15 @@ const ProjectDetail = ({ project }) => {
           <p className='text-gray-500'>Last updated 26th June 2022</p>
           <ReactMarkdown className='markdown' children={project.markdown} linkTarget={"_blank"}/>
         </div>
-        <div className='col-span-4 max-h-80 mt-10 md:col-span-1 border-black border-[1px] shadow-xl shadow-gray-400 rounded-xl p-4'>
+        <div className='col-span-4 h-fit ease-in duration-100 mt-10 md:col-span-1 border-[#5651e5] border-[1px] shadow-xl shadow-gray-400 rounded-xl p-4'>
           <div className='p-2'>
-            <p className='text-center font-bold pb-2'>Technologies</p>
+            <p className='text-center pb-4 tracking-widest text-[#5651e5]'>Technologies</p>
             <div className='grid grid-cols-3 md:grid-cols-1'>
               {
                 project.technologies.map((tag, ix) => {
                   return (
                     <p key={ix} className='text-gray-600 py-2 flex items-center'>
-                      <RiRadioButtonFill className='pr-1' /> {tag}
+                      <RiRadioButtonFill className='pr-2' /> {tag}
                     </p>
                   )
                 })

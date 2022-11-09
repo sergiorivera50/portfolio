@@ -1,7 +1,5 @@
 # Developer Portfolio
 
-## 💡 Motivation
-
 In 2022 I created (and deployed) *sergiorivera.dev*, this website! Although it's not the first time I've created a full-stack application, it's the one where I've learnt the most while building it. Not just in terms of programmatic implementation but in systems design and user experience, both non-trivial topics that I wanted to expand my knowledge on.
 
 My hope with this portfolio is to bring closer what I do with people who might care. Whether you are a potential employer, an academic admissions officer or just a curious developer, I would suggest we [get in contact](mailto:sriveralopez50@gmail.com "Write Email"), as I'm always happy to connect 😁.

@@ -2,7 +2,7 @@
 
 The Platform is a Web3 project I co-founded in August 2021 as an attempt to refresh the concept of digital publishing, where ownership can be genuinely acquired through leveraging blockchain technologies. The Platform is a collection of smart contracts, each individually operated by a group of creators or artists, where royalties are automatically split among their members.
 
-## 💫 My Involvement
+## 👨🏻‍💻 My Involvement
 
 As the Tech Architect, I've worked in many areas of this process (and continue to do so), and they can be broadly categorised into three buckets:
 

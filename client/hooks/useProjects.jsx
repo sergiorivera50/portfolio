@@ -11,7 +11,7 @@ export default function useProjects(items = 6) {
     const { projects } = data
 
     projects.map(
-      project => project.thumbnail = `${BACKEND_URL}/static/${project._id}.png`
+      project => project.thumbnail = `${process.env.STATIC_URL}/${project._id}.png`
     )
 
     return projects

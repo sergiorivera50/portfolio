@@ -5,6 +5,7 @@ import fileUpload from 'express-fileupload'
 import fs from 'fs'
 import path from 'path'
 import { logger } from '../utils/logger.util'
+import AWSUtils from '../utils/aws.util'
 
 export default class ProjectsController {
   static async apiGetProjects(req: Request, res: Response) {
@@ -51,10 +52,9 @@ export default class ProjectsController {
         featured: featured
       }).save()
 
-      fs.writeFile(`public/${createdProject._id}.png`, thumbnailFile.data, (err) => {
-        if (err) return ExpressUtils.errorResponse(res, "Unable to save thumbnail")
-        return ExpressUtils.successResponse(res, { created: createdProject }, 201)
-      })
+      const url = await AWSUtils.uploadFileToS3(`${createdProject._id}.png`, 'image/png', thumbnail)
+      logger.info(`Created project ${createdProject._id} with thumbnail at ${url}`)
+      return ExpressUtils.successResponse(res, { created: createdProject }, 201)
     } catch (e) {
       logger.error(e)
       return ExpressUtils.errorResponse(res, "Unable to add project")
@@ -97,13 +97,8 @@ export default class ProjectsController {
     try {
       const result = await ProjectModel.deleteOne({ _id: id })
       if (result.deletedCount === 0) return ExpressUtils.errorResponse(res, "No documents deleted")
-      fs.unlink(`public/${id}.png`, (err) => {
-        if (err) {
-          logger.error(err.toString())
-          return ExpressUtils.errorResponse(res, "Did not delete thumbnail")
-        }
-        return ExpressUtils.successResponse(res, { deleted: { id, ...result } })
-      })
+      await AWSUtils.deleteFileFromS3(`${id}.png`)
+      return ExpressUtils.successResponse(res, { deleted: { id, ...result } })
     } catch (e) {
       logger.error(e)
       return ExpressUtils.errorResponse(res, e.message)
@@ -113,18 +108,8 @@ export default class ProjectsController {
   static async apiFlushProjects(req: Request, res: Response) {
     try {
       const result = await ProjectModel.deleteMany({})
-      fs.readdir(`public`, (err, files) => {
-        if (err) return ExpressUtils.errorResponse(res, "Cannot read /public")
-
-        const pngs = files.filter(file => path.extname(file) === '.png')
-
-        for (const png of pngs) {
-          fs.unlink(`public/${png}`, err => {
-            if (err) return ExpressUtils.errorResponse(res, `Cannot delete /public/${png}`)
-          })
-        }
-        return ExpressUtils.successResponse(res, { deleted: result })
-      })
+      await AWSUtils.deleteAllFilesFromS3()
+      return ExpressUtils.successResponse(res, { deleted: result })
     } catch (e) {
       logger.error(e)
       return ExpressUtils.errorResponse(res, e.message)

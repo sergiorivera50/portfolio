@@ -7,7 +7,7 @@ export async function getServerSideProps({ params }) {
   const { data } = await api.getProjectById(params.id)
   const { project } = data
 
-  project.thumbnail = `${BACKEND_URL}/static/${project._id}.png`
+  project.thumbnail = `${process.env.STATIC_URL}/${project._id}.png`
 
   return {
     props: { project }

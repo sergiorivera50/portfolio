@@ -12,11 +12,11 @@ const About = () => {
           <p className='uppercase text-xl tracking-widest text-[#5651e5]'>About</p>
           <h2 className='py-4'>A little bit about me</h2>
           <p className='py-2 text-gray-400 text-justify'>
-            My name is Sergio. I'm a software developer currently residing in the United Kingdom 🇬🇧
+            My name is Sergio. I'm a software developer based in the United Kingdom 🇬🇧
           </p>
           <p className='py-2 text-gray-600 text-justify'>
           Driven by passion and diligence, I've managed to endeavour in many areas of the Computer Science landscape 
-          while maintaining a career focus on Artificial Intelligence and Data Science.
+          while maintaining a career focus on Artificial Intelligence and Microservices Architectures.
           </p>
           <p className='py-2 text-gray-600 text-justify'>  {/* Mention NLP work in IBM, polish The Platform */}
             My most recent professional experience has been a 13-month internship with <strong>IBM</strong> at Hursley, 
@@ -26,8 +26,11 @@ const About = () => {
             I created many of the open-source tools that our clients now use as well as various internal APIs and the automation of our infrastructure.
           </p>
           <p className='py-2 text-gray-600 text-justify'>
-            Currently, I'm working on my final year project at <strong>Swansea University</strong> regarding the use of Generative Adversarial Networks 
-            for the generation of synthetic datasets, where I expect to graduate in 2023 with a first-class degree (with honours) in Computer Science.
+            Recently, I completed my final year project at <strong>Swansea University</strong> by presenting "SIGMA:
+            A Microservice Automation Framework for Scalable Adversarial Synthetic Image Generation". Having graduated
+            with a first-class degree (with honours) in Computer Science, I now close this chapter, by embarking on a
+            new academic adventure, pursuing an MPhil in Advanced Computer Science at the esteemed <strong>University of
+            Cambridge</strong>.
           </p>
           {/* <Link href='/#projects'>
             <p className='py-10 text-gray-600 cursor-pointer text-center rainbow-text hover:scale-[105%] linear duration-300'>
